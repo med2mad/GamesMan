@@ -18,7 +18,7 @@
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         @foreach($t as $x)
             - {{$x}}<br/> 
-            {{request()->is('/')}}
+            {{request()->is('ds')}}
         @endforeach
     </body>
 </html>
