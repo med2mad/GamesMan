@@ -16,9 +16,13 @@
         </style>
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        @foreach($t as $x)
-            - {{$x}}<br/> 
-            {{request()->is('ds')}}
-        @endforeach
+        <form action="/?q=111111111" method="post">
+            @csrf
+            <input type="text" name="name" >
+            <input type="text" name="url" >
+            <input type="file" name="image" >
+
+            <input type="submit" value="OK">
+        </form>
     </body>
 </html>
