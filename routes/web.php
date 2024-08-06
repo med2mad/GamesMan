@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-Route::get('/', function (Request $request) {
-    return view('about');
+Route::get('/page/{page}', function (Request $request) {
+    return view('index', ['page'=>$request->page]);
 });
+
 Route::post('/', function (Request $request) {
 
     if($request->hasFile('image') and $request->file('image')->isValid())
@@ -21,6 +22,6 @@ Route::post('/', function (Request $request) {
     }
     else{ $photoName = $request->input('selectedPhotoName'); }
 
-    
+
     return ($photoName);
 });
