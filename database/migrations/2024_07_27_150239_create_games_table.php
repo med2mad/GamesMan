@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('url');
-            $table->string('origin');
-            $table->string('type');
-            $table->string('image');
             $table->string('file');
-            $table->string('date');
+            $table->string('image')->nullable()->default('none.jpg');
+            $table->string('url')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('category')->nullable();
+            $table->string('date')->nullable();
+            $table->text('description')->nullable();
         });
     }
 

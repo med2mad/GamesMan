@@ -23,9 +23,10 @@
                       <input name="name" type="text" class="form-control" id="fname" required>
                     </div>
                   </div>
+
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="file">Game File</label> *
+                      <label class="text-black" for="file" accept=".swf">Game File</label> *
                       <input name="file" type="file" class="form-control" id="file" required>
                     </div>
                   </div>

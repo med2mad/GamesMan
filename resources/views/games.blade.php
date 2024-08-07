@@ -7,9 +7,9 @@
 
 				  	@foreach($data as $game)
 						<div class="col-12 col-md-4 col-lg-3 mb-5">
-							<a class="product-item" href="#">
-								<img src="/images/games/{{$game->file}}" class="img-fluid product-thumbnail">
-								<h3 class="product-title"> {{$game->name}}</h3>
+							<a class="product-item" href="/play/{{$game->file}}">
+								<img src="/images/games/{{$game->image}}" class="img-fluid product-thumbnail">
+								<h3 class="product-title">{{$game->name}}</h3>
 								<p class="product-price">
 									Created in : {{$game->date}}<br>
 									Original url :  {{$game->url}}<br>

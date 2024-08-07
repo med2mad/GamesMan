@@ -5,24 +5,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Game;
 
-Route::get('/', function (Request $request) {
+Route::get('/', function () {
     return view('index', ['page'=>'index']);
+});
+
+Route::get('/play/{file}', function ($file) {
+
+    return view('play', ['file'=>$file, 'page'=>'play']);
+});
+
+Route::get('/page/games', function () {
+    $data = Game::orderBy('id','desc');
+    return view('games', ['data'=>$data->get(), 'page'=>'games']);
 });
 
 Route::get('/page/{page}', function ($page) {
     return view($page, ['page'=>$page]);
 });
 
-Route::get('/games', function (Request $request) {
-    $data = Game::orderBy('id','desc');
-    return view('games', ['data'=>$data->get(), 'page'=>'games']);
-});
-
 Route::post('/', function (Request $request) {
     $gamefile = '';
     if($request->hasFile('file') and $request->file('file')->isValid()){     
         $request->validate(['file' => 'required|file|mimes:swf']);
-        $gamefile = $request->file('file')->getClientOriginalName().time(); 
+        $gamefile = $request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
     }
 
@@ -34,10 +39,10 @@ Route::post('/', function (Request $request) {
     }
 
     $data = Game::create([
-        'name'=>$request->input('name'), 'url'=>$request->input('url'), 'file'=>$photoName,
-        'type'=>$request->input('type'), 'origin'=>$request->input('url'), 'description'=>$request->input('description'),
-        'date'=>$request->input('date'),
+        'name'=>$request->input('name'), 'file'=>substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf')), 
+        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 'description'=>$request->input('description'),
+        'date'=>$request->input('date'), 'image'=>$photoName, 'url'=>$request->input('url'),
     ]);
 
-    return redirect('/services');  
+    return redirect('/page/games');
 });
