@@ -25,10 +25,15 @@
                   </div>
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="file">Image</label> *
+                      <label class="text-black" for="file">Game File</label> *
                       <input name="file" type="file" class="form-control" id="file" required>
                     </div>
                   </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="text-black" for="image">Image</label>
+                  <input name="image" type="file" class="form-control" id="image">
                 </div>
 
                 <div class="form-group">

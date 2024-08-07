@@ -44,14 +44,14 @@
 						<li class="{{$page=='index'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/index">Home</a>
 						</li>
-						<li class="{{$page=='services'?'nav-item active':''}}">
-							<a class="nav-link" href="/services">Services</a>
+						<li class="{{$page=='games'?'nav-item active':''}}">
+							<a class="nav-link" href="/games">Games</a>
 						</li>
 						<li class="{{$page=='shop'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/shop">Shop</a>
 						</li>
-						<li class="{{$page=='about'?'nav-item active':''}}">
-							<a class="nav-link" href="/page/about">About us</a>
+						<li class="{{$page=='add'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/add">Add game</a>
 						</li>
 						<li class="{{$page=='contact'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/contact">Contact us</a>

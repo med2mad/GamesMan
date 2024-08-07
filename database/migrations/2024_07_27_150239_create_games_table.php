@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('origin');
             $table->string('type');
             $table->string('image');
+            $table->string('file');
             $table->string('date');
         });
     }

@@ -7,7 +7,7 @@
             const player = ruffle.createPlayer();
             const container = document.getElementById("flash-game-container");
             container.appendChild(player);
-            player.load("/games/game1.swf");
+            player.load("/games/{{file}}.swf");
         });
     </script>
     <script src="/ruffle/ruffle.js"></script>
