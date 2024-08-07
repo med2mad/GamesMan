@@ -4,8 +4,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-Route::get('/page/{page}', function (Request $request) {
-    return view('index', ['page'=>$request->page]);
+
+Route::get('/', function (Request $request) {
+    return view('index', ['page'=>'index']);
+});
+
+Route::get('/page/{page}', function ($page) {
+    return view($page, ['page'=>$page]);
 });
 
 Route::post('/', function (Request $request) {

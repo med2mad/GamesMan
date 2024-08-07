@@ -16,12 +16,12 @@
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 						<a class="product-item" href="cart.html">
-							<img src="images/services/hitman.jpg" class="img-fluid product-thumbnail">
+							<img src="/images/services/hitman.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Service 1</h3>
 							<strong class="product-price">$45.00</strong>
 
 							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
+								<img src="/images/cross.svg" class="img-fluid">
 							</span>
 						</a>
 					</div> 
@@ -30,12 +30,12 @@
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 						<a class="product-item" href="cart.html">
-							<img src="images/services/ezio-banner_1280x720-150x150.jpg" class="img-fluid product-thumbnail">
+							<img src="/images/services/ezio-banner_1280x720-150x150.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Service 2</h3>
 							<strong class="product-price">$35.00</strong>
 
 							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
+								<img src="/images/cross.svg" class="img-fluid">
 							</span>
 						</a>
 					</div>
@@ -44,12 +44,12 @@
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 						<a class="product-item" href="cart.html">
-							<img src="images/services/kiilmyslf-150x150.jpg" class="img-fluid product-thumbnail">
+							<img src="/images/services/kiilmyslf-150x150.jpg" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Service 3</h3>
 							<strong class="product-price">$25.00</strong>
 
 							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
+								<img src="/images/cross.svg" class="img-fluid">
 							</span>
 						</a>
 					</div>
@@ -71,7 +71,7 @@
 							<div class="col-6 col-md-6">
 								<div class="feature">
 									<div class="icon">
-										<img src="images/truck.svg" alt="Image" class="imf-fluid">
+										<img src="/images/truck.svg" alt="Image" class="imf-fluid">
 									</div>
 									<h3>Fast &amp; Free Shipping</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -81,7 +81,7 @@
 							<div class="col-6 col-md-6">
 								<div class="feature">
 									<div class="icon">
-										<img src="images/support.svg" alt="Image" class="imf-fluid">
+										<img src="/images/support.svg" alt="Image" class="imf-fluid">
 									</div>
 									<h3>24/7 Support</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
@@ -93,7 +93,7 @@
 
 					<div class="col-lg-5 div4">
 						<div class="img-wrap">
-							<img src="images/home/ww1.jpg" alt="Image" class="img-fluid">
+							<img src="/images/home/ww1.jpg" alt="Image" class="img-fluid">
 						</div>
 					</div>
 
@@ -108,9 +108,9 @@
 				<div class="row justify-content-between">
 					<div class="col-lg-7 mb-5 mb-lg-0 div1">
 						<div class="imgs-grid">
-							<div class="grid grid-1"><img src="images/home/methode.jpg" alt="Untree.co" ></div>
-							<div class="grid grid-2"><img src="images/home/Jane-Smith.jpg" alt="Untree.co"></div>
-							<div class="grid grid-3"><img src="images/home/assassination-classroom.jpg" alt="Untree.co"></div>
+							<div class="grid grid-1"><img src="/images/home/methode.jpg" alt="Untree.co" ></div>
+							<div class="grid grid-2"><img src="/images/home/Jane-Smith.jpg" alt="Untree.co"></div>
+							<div class="grid grid-3"><img src="/images/home/assassination-classroom.jpg" alt="Untree.co"></div>
 						</div>
 					</div>
 					<div class="col-lg-5 ps-lg-5 div2">
@@ -138,8 +138,8 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="images/products/denix.png" alt="Image" class="img-fluid" style="height:120px;">
-								<!-- <img src="images/products/denix.png" alt="Image" class="img-fluid"> -->
+								<img src="/images/products/denix.png" alt="Image" class="img-fluid" style="height:120px;">
+								<!-- <img src="/images/products/denix.png" alt="Image" class="img-fluid"> -->
 							</div>
 							<div class="pt-3">
 								<h3>Bomb</h3>
@@ -152,7 +152,7 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="images/products/gun.png" alt="Image" class="img-fluid" style="height:100px;">
+								<img src="/images/products/gun.png" alt="Image" class="img-fluid" style="height:100px;">
 							</div>
 							<div class="pt-3">
 								<h3>Gun</h3>
@@ -165,7 +165,7 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="images/product-3.png" alt="Image" class="img-fluid" style="height:120px;">
+								<img src="/images/product-3.png" alt="Image" class="img-fluid" style="height:120px;">
 							</div>
 							<div class="pt-3">
 								<h3>Ergonomic Chair</h3>
@@ -211,7 +211,7 @@
 
 												<div class="author-info">
 													<div class="author-pic">
-														<img src="images/home/guile1.jpg" alt="Maria Jones" class="img-fluid">
+														<img src="/images/home/guile1.jpg" alt="Maria Jones" class="img-fluid">
 													</div>
 													<h3 class="font-weight-bold">Guile</h3>
 													<span class="position d-block mb-3">soldier.</span>
@@ -234,7 +234,7 @@
 
 												<div class="author-info">
 													<div class="author-pic">
-														<img src="images/home/boxking_about_img_2.jpg" alt="Maria Jones" class="img-fluid">
+														<img src="/images/home/boxking_about_img_2.jpg" alt="Maria Jones" class="img-fluid">
 													</div>
 													<h3 class="font-weight-bold">Boxer Marry</h3>
 													<span class="position d-block mb-3">professional boxer.</span>
@@ -257,7 +257,7 @@
 
 												<div class="author-info">
 													<div class="author-pic">
-														<img src="images/home/nouedddin.png" alt="Maria Jones" class="img-fluid">
+														<img src="/images/home/nouedddin.png" alt="Maria Jones" class="img-fluid">
 													</div>
 													<h3 class="font-weight-bold">Noureddine Hashadi</h3>
 													<span class="position d-block mb-3">a freind.</span>
@@ -294,7 +294,7 @@
 
 					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/products/glock.jpg" alt="Image" class="img-fluid"></a>
+							<a href="#" class="post-thumbnail"><img src="/images/products/glock.jpg" alt="Image" class="img-fluid"></a>
 							<div class="post-content-entry">
 								<h3><a href="#">First Time Home Owner Ideas</a></h3>
 								<div class="meta">
@@ -306,7 +306,7 @@
 
 					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/products/joe-ei-cl8xcbco-unsplash-scaled-1-1024x682.jpg" alt="Image" class="img-fluid"></a>
+							<a href="#" class="post-thumbnail"><img src="/images/products/joe-ei-cl8xcbco-unsplash-scaled-1-1024x682.jpg" alt="Image" class="img-fluid"></a>
 							<div class="post-content-entry">
 								<h3><a href="#">How To Keep Your Furniture Clean</a></h3>
 								<div class="meta">
@@ -318,7 +318,7 @@
 
 					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="images/products/ca-times.brightspotcdn-1024x768.jpg" alt="Image" class="img-fluid"></a>
+							<a href="#" class="post-thumbnail"><img src="/images/products/ca-times.brightspotcdn-1024x768.jpg" alt="Image" class="img-fluid"></a>
 							<div class="post-content-entry">
 								<h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
 								<div class="meta">
@@ -338,13 +338,13 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="images/sofa.png" alt="Image" class="img-fluid">
+					<img src="/images/sofa.png" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="subscription-form">
-							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="/images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
 
 							<form action="#" class="row g-3">
 								<div class="col-auto">

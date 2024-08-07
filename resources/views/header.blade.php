@@ -33,7 +33,7 @@
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="./images/home/logo-2.png" alt=""><span>.</span></a>
+				<a class="navbar-brand" href="index.html"><img src="/images/home/logo-2.png" alt=""><span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -41,18 +41,26 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li><a class="nav-link" href="/">Home</a></li>
-						<li><a class="nav-link" href="/services">Services</a></li>
-						<li><a class="nav-link" href="/shop">Shop</a></li>
-						<li class="nav-item active">
-							<a class="nav-link" href="/about">About us</a>
+						<li class="{{$page=='index'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/index">Home</a>
 						</li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
+						<li class="{{$page=='services'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/services">Services</a>
+						</li>
+						<li class="{{$page=='shop'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/shop">Shop</a>
+						</li>
+						<li class="{{$page=='about'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/about">About us</a>
+						</li>
+						<li class="{{$page=='contact'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/contact">Contact us</a>
+						</li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+						<li><a class="nav-link" href="#"><img src="/images/user.svg"></a></li>
+						<li><a class="nav-link" href="cart.html"><img src="/images/cart.svg"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -79,13 +87,13 @@
 								<div class="splide__track">
 									<ul class="splide__list" style="height:50%;">
 										<li class="splide__slide">
-											<img src="images/products/herobomb.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/products/herobomb.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="images/products/gun.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/products/gun.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="images/products/game.jpg" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/products/game.jpg" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 									</ul>
 								</div>
