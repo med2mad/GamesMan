@@ -45,7 +45,7 @@
 							<a class="nav-link" href="/page/index">Home</a>
 						</li>
 						<li class="{{$page=='services'?'nav-item active':''}}">
-							<a class="nav-link" href="/page/services">Services</a>
+							<a class="nav-link" href="/services">Services</a>
 						</li>
 						<li class="{{$page=='shop'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/shop">Shop</a>

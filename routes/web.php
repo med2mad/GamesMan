@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use App\Models\Game;
 
 Route::get('/', function (Request $request) {
     return view('index', ['page'=>'index']);
@@ -13,20 +13,24 @@ Route::get('/page/{page}', function ($page) {
     return view($page, ['page'=>$page]);
 });
 
+Route::get('/services', function (Request $request) {
+    $data = Game::orderBy('id','desc');
+    return view('services', ['data'=>$data->get(), 'page'=>'services']);
+});
+
 Route::post('/', function (Request $request) {
-
-    if($request->hasFile('image') and $request->file('image')->isValid())
-    {                 
-        $photoType = $request->file('image')->getMimeType();
-        if(!Str::startsWith($photoType,'image/')){ return response('Error: Only Images!'); }
-        $photoSize = $request->file('image')->getSize();
-        if($photoSize>1024*1024*5){ return response('Error: image too large'); }
-
-        $photoName = $request->file('image')->getClientOriginalName().time(); 
-        $request->file('image')->move(public_path('images/games'), $photoName);
+    $photoName = 'none.jpg';
+    if($request->hasFile('file') and $request->file('file')->isValid()){   
+        $request->validate(['file' => 'required|file|mimes:jpg,png,jpeg,gif,svg|max:4096']);    
+        $photoName = $request->file('file')->getClientOriginalName().time(); 
+        $request->file('file')->move(public_path('images/games'), $photoName);
     }
-    else{ $photoName = $request->input('selectedPhotoName'); }
 
+    $data = Game::create([
+        'name'=>$request->input('name'), 'url'=>$request->input('url'), 'file'=>$photoName,
+        'type'=>$request->input('type'), 'origin'=>$request->input('url'), 'description'=>$request->input('description'),
+        'date'=>$request->input('date'),
+    ]);
 
-    return ($photoName);
+    return redirect('/services');  
 });

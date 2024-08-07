@@ -16,7 +16,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('url');
+            $table->string('origin');
+            $table->string('type');
             $table->string('image');
+            $table->string('date');
         });
     }
 

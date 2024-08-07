@@ -644,7 +644,7 @@ a {
       font-size: 14px !important; }
 
 .untree_co-section {
-  padding: 7rem 0; }
+  padding: 1rem 0; }
 
 .form-control {
   height: 50px;
@@ -736,8 +736,8 @@ textarea {
     .product-price{
       margin: 0;
     }
-    body > div.untree_co-section.product-section.before-footer-section > div > div > div:nth-child(1) > a{
-      padding: 0;
+    .product-section a{
+      padding: 15px !important;
     }
     .product-section .product-item h3 {
       font-weight: bold !important;
