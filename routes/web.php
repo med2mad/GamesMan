@@ -38,10 +38,12 @@ Route::post('/', function (Request $request) {
         $request->file('image')->move(public_path('images/games'), $photoName);
     }
 
+    $name = $request->input('name');
+    $name = $name?$name:substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
     $data = Game::create([
-        'name'=>$request->input('name'), 'file'=>substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf')), 
-        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 'description'=>$request->input('description'),
-        'date'=>$request->input('date'), 'image'=>$photoName, 'url'=>$request->input('url'),
+        'name'=>$name, 'file'=>$name, 'image'=>$photoName, 'url'=>$request->input('url'), 
+        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 
+        'date'=>$request->input('date'), 'description'=>$request->input('description'), 
     ]);
 
     return redirect('/page/games');

@@ -16,25 +16,25 @@
 
               <form action="/" method="post" enctype="multipart/form-data">
                 @csrf
+
+                <div class="form-group">
+                  <label class="text-black" for="file" accept=".swf">Game File (required*)</label>
+                  <input name="file" type="file" class="form-control" id="file" required>
+                </div>
+
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="fname">Name</label> *
-                      <input name="name" type="text" class="form-control" id="fname" required>
+                      <label class="text-black" for="fname">Name</label>
+                      <input name="name" type="text" class="form-control" id="fname">
                     </div>
                   </div>
-
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="file" accept=".swf">Game File</label> *
-                      <input name="file" type="file" class="form-control" id="file" required>
+                      <label class="text-black" for="image">Image</label>
+                      <input name="image" type="file" class="form-control" id="image">
                     </div>
                   </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="text-black" for="image">Image</label>
-                  <input name="image" type="file" class="form-control" id="image">
                 </div>
 
                 <div class="form-group">

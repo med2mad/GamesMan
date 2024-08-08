@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable()->default('none.jpg');
             $table->string('url')->nullable();
             $table->string('origin')->nullable();
+            $table->string('owner')->nullable();
             $table->string('category')->nullable();
             $table->string('date')->nullable();
             $table->text('description')->nullable();
