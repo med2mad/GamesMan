@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('file');
             $table->string('image')->nullable()->default('none.jpg');
+            $table->boolean('valid')->default(false);
             $table->string('url')->nullable();
             $table->string('origin')->nullable();
             $table->string('owner')->nullable();

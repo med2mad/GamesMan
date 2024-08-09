@@ -43,7 +43,7 @@ Route::post('/', function (Request $request) {
     $data = Game::create([
         'name'=>$name, 'file'=>$name, 'image'=>$photoName, 'url'=>$request->input('url'), 
         'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 
-        'date'=>$request->input('date'), 'description'=>$request->input('description'), 
+        'date'=>$request->input('date'), 'description'=>$request->input('description'), 'valid'=>false, 
     ]);
 
     return redirect('/page/games');

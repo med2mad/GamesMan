@@ -6,195 +6,24 @@
 		      	<div class="row">
 
 				  	@foreach($data as $game)
-						<div class="col-12 col-md-4 col-lg-3 mb-5">
-							<a class="product-item" href="/play/{{$game->file}}">
-								<img src="/images/games/{{$game->image}}" class="img-fluid product-thumbnail">
-								<h3 class="product-title">{{$game->name}}</h3>
-								<p class="product-price">
-									Created in : {{$game->date}}<br>
-									Original url :  {{$game->url}}<br>
-									Type :  {{$game->type}}
-								</p>
-								<span class="icon-cross">
-									<img src="/images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div> 
+						@if($game->valid)
+							<div class="col-12 col-md-4 col-lg-3 mb-5">
+								<a class="product-item" href="/play/{{$game->file}}">
+									<img src="/images/games/{{$game->image}}" class="img-fluid product-thumbnail">
+									<h3 class="product-title">{{$game->name}}</h3>
+									<p class="product-price">
+										Created in : {{$game->date}}<br>
+										Original url :  {{$game->url}}<br>
+										Type :  {{$game->type}}
+									</p>
+									<span class="icon-cross">
+										<img src="/images/cross.svg" class="img-fluid">
+									</span>
+								</a>
+							</div> 
+						@endif
 					@endforeach
 					
-		      		<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/hitman.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Game 1</h3>
-							<p class="product-price">
-								Created in : <br>
-								Original url : <br>
-								Type : 
-							</p>
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/ezio-banner_1280x720-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service2</h3>
-							<strong class="product-price">$35.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/kiilmyslf-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service3</h3>
-							<strong class="product-price">$25.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/main-qimg-2739145c3d89a8e80ea0dcdcdc938d7d-150x150.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service4</h3>
-							<strong class="product-price">$60.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
-
-
-					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/ob_081128_tacle-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service5</h3>
-							<strong class="product-price">$29.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/meme3-150x150.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service6</h3>
-							<strong class="product-price">$50.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/download-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service7</h3>
-							<strong class="product-price">$78.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/benladen-1-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service8</h3>
-							<strong class="product-price">$43.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
-
-					
-					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/nina-tekken6-arena-story-artwork2-1-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service9</h3>
-							<strong class="product-price">$40.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/1000_F_327886151_uhO2XbyKnWdYkjJZniVAWH3L05meAC4u-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service10</h3>
-							<strong class="product-price">$33.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/ezgif.com-webp-to-jpg-converted-1-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service11</h3>
-							<strong class="product-price">$90.00</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="/images/services/MV5BMGQ1ZGZmNTAtM2MyYi00NmZhLTkwYmYtNTNlZDRhMzU2ZTgwXkEyXkFqcGdeQW1yb3NzZXI@._V1_-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service12</h3>
-							<strong class="product-price">$??.??</strong>
-
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
-
 		      	</div>
 		    </div>
 		</div>
