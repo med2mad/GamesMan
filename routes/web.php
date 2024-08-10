@@ -46,5 +46,5 @@ Route::post('/', function (Request $request) {
         'date'=>$request->input('date'), 'description'=>$request->input('description'), 'valid'=>false, 
     ]);
 
-    return redirect('/page/games');
+    return (["message"=>'Submitted']);
 });

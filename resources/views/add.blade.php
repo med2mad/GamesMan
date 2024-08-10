@@ -14,12 +14,12 @@
 
 
 
-              <form action="/" method="post" enctype="multipart/form-data">
+              <form action="/" method="post" onsubmit="f(event)" enctype="multipart/form-data" id="myform">
                 @csrf
 
                 <div class="form-group">
                   <label class="text-black" for="file" accept=".swf">Game File (required*)</label>
-                  <input name="file" type="file" class="form-control" id="file" required>
+                  <input name="file" type="file" class="form-control" id="file" >
                 </div>
 
                 <div class="row">
@@ -62,8 +62,12 @@
                   <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary-hover-outline">Add Game</button>
+                <button type="submit" class="btn btn-primary-hover-outline">Submit Game</button>
               </form>
+
+              <div class="form-group mt-2 text-right">
+                  <p class="alert alert-info" style="display:none;" id="ok">Thank you !<br>Game submitted for validation.</p>
+              </div>
 
             </div>
 
@@ -79,5 +83,17 @@
 
   <!-- End Contact Form -->
 
-		
+  <script>
+      function f(event) {
+          event.preventDefault();
+          const fd = new FormData(document.getElementById("myform"));
+          fetch('/', {method:'POST',body:fd})
+          .then(response => response.json())
+          .then((data) => {
+            document.getElementById("ok").style.display = 'block';
+            document.getElementById("myform").reset();
+          })
+      }
+  </script>
+
 @include( 'footer' );

@@ -6,7 +6,7 @@
 		      	<div class="row">
 
 				  	@foreach($data as $game)
-						@if($game->valid)
+						@if($game->valid == 0)
 							<div class="col-12 col-md-4 col-lg-3 mb-5">
 								<a class="product-item" href="/play/{{$game->file}}">
 									<img src="/images/games/{{$game->image}}" class="img-fluid product-thumbnail">
