@@ -120,23 +120,6 @@
 			});
 		</script>
 	
-	<script>
-		document.addEventListener("DOMContentLoaded", (event) => {
-			gsap.registerPlugin(ScrollTrigger);
-			gsap.from(document.querySelectorAll('.div1'), {
-				xPercent:-50,
-				opacity:0,
-				scrollTrigger:{trigger:'.div1', start:"top 90%", end:'bottom 90%', scrub:true}
-			});
-			gsap.from(document.querySelectorAll('.div2'), {
-				xPercent:50,
-				opacity:0,
-				scrollTrigger:{trigger:'.div2', start:"top 90%", end:'bottom 90%', scrub:true}
-			});
-		});
-		
-	</script>
-
 		<script src="/js/bootstrap.bundle.min.js"></script>
 		<script src="/js/tiny-slider.js"></script>
 		<script src="/js/custom.js"></script>

@@ -14,7 +14,7 @@
 
 
 
-              <form action="/" method="post" onsubmit="f(event)" enctype="multipart/form-data" id="myform">
+              <form action="/" method="post" onsubmit="f(event)" onchange="f2()" enctype="multipart/form-data" id="myform">
                 @csrf
 
                 <div class="form-group">
@@ -93,6 +93,10 @@
             document.getElementById("ok").style.display = 'block';
             document.getElementById("myform").reset();
           })
+      }
+
+      function f2() {
+        document.getElementById("ok").style.display = 'none';
       }
   </script>
 
