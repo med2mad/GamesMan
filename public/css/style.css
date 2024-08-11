@@ -1,4 +1,4 @@
-/*
+/*UntreeStore
 * Template Name: UntreeStore
 * Template Author: Untree.co
 * Author URI: https://untree.co/
@@ -594,9 +594,12 @@ a {
       border-radius: 10px !important; }
   .footer-section .sofa-img {
     position: absolute;
-    top: -200px;
+    top: -120px;
     z-index: 1;
     right: 0; }
+    .game{
+      margin-bottom: 100px;
+    }
   .footer-section .sofa-img::before {
     content: '';
     position: absolute;
