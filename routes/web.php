@@ -25,17 +25,17 @@ Route::get('/page/{page}', function ($page) {
 
 Route::post('/', function (Request $request) {
     $gamefile = '';
-    if($request->hasFile('file') ) {    
+    if($request->hasFile('file') ) {
         $request->validate(['file' => 'file|mimes:swf']);
-        $gamefile = $request->file('file')->getClientOriginalName();
+        $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
     }
 
     $photoName = 'none.jpg';
     if($request->hasFile('image') and $request->file('image')->isValid()) {   
-        $request->validate(['image' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);    
-        $photoName = $request->file('image')->getClientOriginalName().time(); 
+        $request->validate(['image' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
+        $photoName = time().';'.$request->file('image')->getClientOriginalName(); 
         $request->file('image')->move(public_path('images/games'), $photoName);
     }
 
