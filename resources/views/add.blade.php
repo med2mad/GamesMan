@@ -14,7 +14,7 @@
 
 
 
-              <form action="/" method="post" onsubmit="f(event)" onchange="f2()" enctype="multipart/form-data" id="myform">
+              <form action="/" method="post" onsubmit="ok(event)" onchange="noThankYou()" enctype="multipart/form-data" id="myform">
                 @csrf
 
                 <div class="form-group">
@@ -84,7 +84,7 @@
   <!-- End Contact Form -->
 
   <script>
-      function f(event) {
+      function ok(event) {
           event.preventDefault();
           const fd = new FormData(document.getElementById("myform"));
           fetch('/', {method:'POST',body:fd})
@@ -95,7 +95,7 @@
           })
       }
 
-      function f2() {
+      function noThankYou() {
         document.getElementById("ok").style.display = 'none';
       }
   </script>

@@ -8,13 +8,13 @@
 				  	@foreach($data as $game)
 						@if($game->valid == 0)
 							<div class="col-12 col-md-4 col-lg-3 mb-5">
-								<a class="product-item" href="/play/{{$game->file}}">
+								<a class="product-item" href="/play?file={{$game->file}}&url={{$game->url}}">
 									<img src="/images/games/{{$game->image}}" class="img-fluid product-thumbnail">
 									<h3 class="product-title">{{$game->name}}</h3>
 									<p class="product-price">
-										Created in : {{$game->date}}<br>
-										Original url :  {{$game->url}}<br>
-										Type :  {{$game->type}}
+										Owner : {{$game->owner}}<br>
+										Submitted : {{$game->date}}<br>
+										Type : {{$game->category}}
 									</p>
 									<span class="icon-cross">
 										<img src="/images/cross.svg" class="img-fluid">
