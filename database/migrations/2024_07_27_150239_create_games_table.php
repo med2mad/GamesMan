@@ -16,10 +16,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('file');
+            $table->string('url')->nullable();
             $table->string('image')->nullable()->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(0);
-            $table->string('url')->nullable();
             $table->string('origin')->nullable();
             $table->string('owner')->nullable();
             $table->string('category')->nullable();
