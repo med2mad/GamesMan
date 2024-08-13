@@ -25,7 +25,7 @@ Route::get('/page/{page}', function ($page) {
 
 Route::post('/', function (Request $request) {
     $gamefile = '';
-    if($request->hasFile('file') and $request->file('file')->isValid()) {    
+    if($request->hasFile('file') ) {    
         $request->validate(['file' => 'file|mimes:swf']);
         $gamefile = $request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);

@@ -14,6 +14,10 @@
 
 
 
+              <div class="form-group mt-2 text-right">
+                  <p class="alert alert-info" style="display:none;" id="ok">Thank you !<br>Game submitted for validation.</p>
+              </div>
+
               <form action="/" method="post" onsubmit="ok(event)" onchange="noThankYou()" enctype="multipart/form-data" id="myform">
                 @csrf
 
@@ -22,6 +26,8 @@
                   <input name="file" type="file" class="form-control" id="file" >
                 </div>
 
+                <button type="submit" class="btn btn-primary-hover-outline">Submit Game</button>
+                
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
@@ -64,10 +70,6 @@
 
                 <button type="submit" class="btn btn-primary-hover-outline">Submit Game</button>
               </form>
-
-              <div class="form-group mt-2 text-right">
-                  <p class="alert alert-info" style="display:none;" id="ok">Thank you !<br>Game submitted for validation.</p>
-              </div>
 
             </div>
 
