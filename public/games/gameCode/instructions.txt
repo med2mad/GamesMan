@@ -1,0 +1,3 @@
+↔Swipe left or right to change lanes (or use arrow keys)
+⬆️Swipe up to jump (or use arrow key)
+⭐Collect as many stars as you can
