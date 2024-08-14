@@ -25,7 +25,7 @@ Route::get('/page/{page}', function ($page) {
 
 Route::post('/', function (Request $request) {
     $gamefile = '';
-    if($request->hasFile('file') ) {
+    if($request->hasFile('file') and $request->file('file')->isValid()) {
         $request->validate(['file' => 'file|mimes:swf']);
         $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
@@ -33,17 +33,17 @@ Route::post('/', function (Request $request) {
     }
 
     $photoName = 'none.jpg';
-    if($request->hasFile('image') and $request->file('image')->isValid()) {   
-        $request->validate(['image' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $photoName = time().';'.$request->file('image')->getClientOriginalName(); 
-        $request->file('image')->move(public_path('images/games'), $photoName);
+    if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
+        $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
+        $photoName = time().';'.$request->file('thumbnail')->getClientOriginalName();
+        $request->file('thumbnail')->move(public_path('thumbnails/games'), $photoName);
     }
 
     $name = $request->input('name');
     $name = $name?$name:$gamefile;
     $data = Game::create([
-        'name'=>$name, 'file'=>$gamefile, 'image'=>$photoName, 'url'=>$request->input('url'), 
-        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 
+        'name'=>$name, 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
+        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 'screenshot'=>$photoName, 
         'date'=>$request->input('date'), 'description'=>$request->input('description'), 'valid'=>false, 
     ]);
 

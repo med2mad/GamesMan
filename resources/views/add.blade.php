@@ -38,7 +38,7 @@
                   <div class="col-6">
                     <div class="form-group">
                       <label class="text-black" for="image">Image</label>
-                      <input name="image" type="file" class="form-control" id="image">
+                      <input name="thumbnail" type="file" class="form-control" id="image">
                     </div>
                   </div>
                 </div>

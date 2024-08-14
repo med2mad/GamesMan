@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
             $table->string('file');
             $table->string('url')->nullable();
-            $table->string('image')->nullable()->default('none.jpg');
+            $table->string('thumbnail')->default('none.jpg');
+            $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(0);
             $table->string('origin')->nullable();
@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('date')->nullable();
             $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
