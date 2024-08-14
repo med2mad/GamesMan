@@ -5,15 +5,12 @@
 * License: https://creativecommons.org/licenses/by/3.0/
 */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-.product-thumbnail {
-  border-radius: 10%;
-  object-fit: contain;
-  background-color:#d6d6d6;
-}
 .product-item .product-thumbnail{
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   box-shadow: 20px 10px 0px #dce5e4;
+  border-radius: 5%;
+  background-color:#d6d6d6;
 }
 
 .hero{
@@ -746,10 +743,17 @@ textarea {
     }
     .product-section .product-item h3 {
       font-weight: bold !important;
-      font-size: 1.2rem !important; }
+      font-size: 1.2rem !important; 
+    margin-top: 10px !important;}
       .product-section .product-item p {
         font-weight: 600 !important;
         font-size: 0.9rem !important;
         line-height: 1.4rem;
         padding-bottom: 5px;
+        text-align: left;
+        color: #acacac;
+      }
+
+      .stars{
+        width:100px;
       }

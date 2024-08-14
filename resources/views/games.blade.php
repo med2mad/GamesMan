@@ -6,7 +6,7 @@
 		      	<div class="row">
 
 				  	@foreach($data as $game)
-						@if($game->valid == 0)
+						@if($game->valid)
 							<div class="col-12 col-md-4 col-lg-3 mb-5">
 								<a class="product-item" href="/play?file={{$game->file}}&url={{$game->url}}">
 									<img
@@ -17,9 +17,8 @@
 									>
 									<h3 class="product-title">{{$game->name}}</h3>
 									<p class="product-price">
-										Owner : {{$game->owner}}<br>
-										Submitted : {{$game->date}}<br>
-										Type : {{$game->category}}
+										Category : {{$game->category}}<br>
+										Popularity : <img src="/images/stars/{{$game->popularity}}.png" class="stars">
 									</p>
 									<span class="icon-cross">
 										<img src="/images/cross.svg" class="img-fluid">

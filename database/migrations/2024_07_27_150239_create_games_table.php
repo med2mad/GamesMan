@@ -20,10 +20,7 @@ return new class extends Migration
             $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(0);
-            $table->string('origin')->nullable();
-            $table->string('owner')->nullable();
             $table->string('category')->nullable();
-            $table->string('date')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });
