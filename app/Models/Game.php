@@ -10,7 +10,5 @@ class Game extends Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $connection= 'mysql';
-    // protected $connection= 'mysql freesqldatabase.com';
     protected $table = 'games';
 }
