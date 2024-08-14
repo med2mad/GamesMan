@@ -9,7 +9,12 @@
 						@if($game->valid == 0)
 							<div class="col-12 col-md-4 col-lg-3 mb-5">
 								<a class="product-item" href="/play?file={{$game->file}}&url={{$game->url}}">
-									<img src="/images/thumbnails/{{$game->thumbnail}}" class="img-fluid product-thumbnail">
+									<img
+									onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
+									onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
+									src="/images/thumbnails/{{$game->thumbnail}}"
+									class="img-fluid product-thumbnail"
+									>
 									<h3 class="product-title">{{$game->name}}</h3>
 									<p class="product-price">
 										Owner : {{$game->owner}}<br>
