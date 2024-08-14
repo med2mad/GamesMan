@@ -53,16 +53,6 @@
                   <input name="type" type="text" class="form-control" id="type">
                 </div>
 
-                <div class="form-group">
-                  <label class="text-black" for="date">Date</label>
-                  <input name="date" type="text" class="form-control" id="date">
-                </div>
-
-                <div class="form-group">
-                  <label class="text-black" for="Origin">Origin</label>
-                  <input name="origin" type="text" class="form-control" id="origin">
-                </div>
-
                 <div class="form-group mb-5">
                   <label class="text-black" for="description">Description</label>
                   <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>

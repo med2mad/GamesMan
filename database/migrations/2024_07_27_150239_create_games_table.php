@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('thumbnail')->default('none.jpg');
             $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
-            $table->integer('popularity')->default(0);
+            $table->integer('popularity')->default(1);
             $table->string('category')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

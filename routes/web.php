@@ -42,8 +42,8 @@ Route::post('/', function (Request $request) {
     $name = $name?$name:$gamefile;
     $data = Game::create([
         'name'=>$name, 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
-        'category'=>$request->input('category'), 'origin'=>$request->input('origin'), 'screenshot'=>$photoName, 
-        'date'=>$request->input('date'), 'description'=>$request->input('description'), 'valid'=>false, 
+        'category'=>$request->input('category'), 'screenshot'=>$photoName, 
+        'description'=>$request->input('description'),
     ]);
 
     return (["message"=>'Submitted']);
