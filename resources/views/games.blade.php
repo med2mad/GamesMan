@@ -10,8 +10,8 @@
 							<div class="col-12 col-md-4 col-lg-3 mb-5">
 								<a class="product-item" href="/play?file={{$game->file}}&url={{$game->url}}">
 									<img
-									onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
-									onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
+									<!-- onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
+									onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'" -->
 									src="/images/thumbnails/{{$game->thumbnail}}"
 									class="img-fluid product-thumbnail"
 									>
