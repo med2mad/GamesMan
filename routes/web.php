@@ -10,7 +10,6 @@ Route::get('/', function () {
 });
 
 Route::get('/play', function () {
-
     return view('play', ['page'=>'play', 'file'=>request('file'), 'url'=>request('url')]);
 });
 
