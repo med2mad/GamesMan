@@ -12,7 +12,7 @@
             player.load("/games/{{$file}}.swf");
         });
     </script>
-    <script src="/ruffle/ruffle.js"></script>
+    <script src="/ruffle/ruffle.js"></script> <!--server (remove line, cannot have emulator on infinityfree) -->
 
 @else
 

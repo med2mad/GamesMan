@@ -24,6 +24,9 @@
 
 		<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
+		<!--server(cannot have emulator in infinityfree.com) <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script> --> 
+
+
 		<title>GamesMan</title>
 	</head>
 

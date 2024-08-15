@@ -18,7 +18,7 @@
 									<h3 class="product-title">{{$game->name}}</h3>
 									<p class="product-price">
 										Category : {{$game->category}}<br>
-										Popularity : <img src="/images/stars/{{$game->popularity}}.png" class="stars">
+										Popularity : <img src="/images/stars/{{$game->popularity}}.png" style="width:100px;">
 									</p>
 									<span class="icon-cross">
 										<img src="/images/cross.svg" class="img-fluid">
