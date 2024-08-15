@@ -38,10 +38,8 @@ Route::post('/', function (Request $request) {
         $request->file('thumbnail')->move(public_path('thumbnails/games'), $photoName);
     }
 
-    $name = $request->input('name');
-    $name = $name?$name:$gamefile;
     $data = Game::create([
-        'name'=>$name, 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
+        'name'=>$request->input('name'), 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
         'category'=>$request->input('category'), 'screenshot'=>$photoName, 
         'description'=>$request->input('description'),
     ]);

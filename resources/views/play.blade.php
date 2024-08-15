@@ -19,15 +19,16 @@
     <div class="game">
 
         <iframe src="{{$url}}" width="960" height="600" scrolling="none" frameborder="0"></iframe>
-
+    
     </div>
     
 @endif
     
-    
-
     <!-- 
-    <iframe src="" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width:968px;height:561px;" width="960" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="width: 100%; height: 100%;" width="960" height="600" frameborder="0" scrolling="no"></iframe>
      -->
 
-@include( 'footer' );
+
+
+
+ @include( 'footer' );
