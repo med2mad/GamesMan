@@ -6,8 +6,8 @@
 */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 .product-item .product-thumbnail{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   box-shadow: 20px 10px 0px #dce5e4;
   border-radius: 5%;
   background-color:#d6d6d6;
