@@ -16,7 +16,7 @@
 	<input type="submit" value="Search"/>
 </form>
 
-{{ $data->links('pagination::bootstrap-4') }}
+{{ $data->appends(array('title'=>$title))->links('pagination::bootstrap-4') }}
 
 <!-- Start services Section -->
 <div class="untree_co-section product-section before-footer-section" style="margin-top:4rem; padding-bottom:0 !important;">

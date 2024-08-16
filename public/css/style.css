@@ -758,6 +758,3 @@ textarea {
       .pagination{
         justify-content: center;
       }
-      .pagination:nth-child(1){
-color: red;
-      }
