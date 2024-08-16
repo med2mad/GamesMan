@@ -20,8 +20,8 @@ Route::get('/page/games', function (Request $request) {
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $data = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order);
-    return view('games', ["data"=>$data->get(), "page"=>'games', "title"=>$title, "sortBy"=>$sortBy, "order"=>$order]);
+    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order)->paginate(3);
+    return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortBy"=>$sortBy, "order"=>$order]);
 });
 
 Route::get('/page/{page}', function ($page) {
@@ -29,6 +29,11 @@ Route::get('/page/{page}', function ($page) {
 });
 
 Route::post('/', function (Request $request) {
+    if (!$request->input('title'))
+    { return view('add', ['page'=>'add', "error"=>'Title required']); }
+    else if(!$request->input('url') && !$request->hasFile('file'))
+    { return view('add', ['page'=>'add', "error"=>'Game File/Url required']); }
+
     $gamefile = '';
     if($request->hasFile('file') and $request->file('file')->isValid()) {
         $request->validate(['file' => 'file|mimes:swf']);
@@ -37,18 +42,25 @@ Route::post('/', function (Request $request) {
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
     }
 
-    $photoName = 'none.jpg';
+    $thumbnail = 'none.jpg';
     if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
         $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $photoName = time().';'.$request->file('thumbnail')->getClientOriginalName();
-        $request->file('thumbnail')->move(public_path('thumbnails/games'), $photoName);
+        $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
+        $request->file('thumbnail')->move(public_path('images/thumbnails'), $thumbnail);
+    }
+
+    $screenshot = 'none.jpg';
+    if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
+        $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
+        $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
+        $request->file('screenshot')->move(public_path('images/screenshots'), $screenshot);
     }
 
     $data = Game::create([
-        'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
-        'genre'=>$request->input('genre'), 'screenshot'=>$photoName, 
+        'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'),
+        'genre'=>$request->input('genre'), 'screenshot'=>$screenshot, 'thumbnail'=>$thumbnail, 
         'description'=>$request->input('description'),
     ]);
 
-    return (["message"=>'Submitted']);
+    return view('add', ['page'=>'add', "success"=>'success']);
 });

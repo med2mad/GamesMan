@@ -1,95 +1,77 @@
 @include( 'header' );
 
-		
-		<!-- Start Contact Form -->
-	<div class="untree_co-section">
-      <div class="container">
+<!-- Start Contact Form -->
+<div class="untree_co-section">
+  <div class="container">
+    <div class="block">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-8 pb-4">
 
-        <div class="block">
-          <div class="row justify-content-center">
-
-
-            <div class="col-md-8 col-lg-8 pb-4">
-
-
-
-
-              <div class="form-group mt-2 text-right">
-                  <p class="alert alert-info" style="display:none;" id="ok">Thank you !<br>Game submitted for validation.</p>
-              </div>
-
-              <form action="/" method="post" onsubmit="ok(event)" onchange="noThankYou()" enctype="multipart/form-data" id="myform">
-                @csrf
-
-                <div class="form-group">
-                  <label class="text-black" for="file" accept=".swf">Game File (required*)</label>
-                  <input name="file" type="file" class="form-control" id="file" >
-                </div>
-
-                <button type="submit" class="btn btn-primary-hover-outline">Submit Game</button>
-                
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="title">Title</label>
-                      <input name="title" type="text" class="form-control" id="title">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="image">Image</label>
-                      <input name="thumbnail" type="file" class="form-control" id="image">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="text-black" for="url">Url</label>
-                  <input name="url" type="text" class="form-control" id="url">
-                </div>
-
-                <div class="form-group">
-                  <label class="text-black" for="type">Type</label>
-                  <input name="type" type="text" class="form-control" id="type">
-                </div>
-
-                <div class="form-group mb-5">
-                  <label class="text-black" for="description">Description</label>
-                  <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary-hover-outline">Submit Game</button>
-              </form>
-
-            </div>
-
+          <div class="form-group mt-2 text-right">
+            @isset($success)
+              <p class="alert alert-info" >Thank you !<br>Game submitted for validation.</p>
+            @endisset
+            @isset($error)
+              <p class="alert alert-danger">{{$error}}</p>
+            @endisset
           </div>
 
+          <form action="/" method="post" enctype="multipart/form-data" id="myform">
+            @csrf
+            
+            <div class="form-group">
+              <label class="text-black" for="title">Title (*)</label>
+              <input name="title" type="text" class="form-control" id="title" required />
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="file" accept=".swf">Game File</label>
+                  <input name="file" type="file" class="form-control" id="file" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="url">Url</label>
+                  <input name="url" type="text" class="form-control" id="url" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="thumbnail">Thumbnail</label>
+                  <input name="thumbnail" type="file" class="form-control" id="thumbnail" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="screenshot">Screen Shot</label>
+                  <input name="screenshot" type="file" class="form-control" id="screenshot" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-black" for="genre">Genre</label>
+              <input name="genre" type="text" class="form-control" id="genre" />
+            </div>
+
+            <div class="form-group mb-5">
+              <label class="text-black" for="description">Description</label>
+              <textarea name="description" class="form-control" id="description" cols="30" rows="5"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary-hover-outline" value="Submit Game" />
+          </form>
+
         </div>
-
       </div>
-
-
     </div>
   </div>
-
-  <!-- End Contact Form -->
-
-  <script>
-      function ok(event) {
-          event.preventDefault();
-          const fd = new FormData(document.getElementById("myform"));
-          fetch('/', {method:'POST',body:fd})
-          .then(response => response.json())
-          .then((data) => {
-            document.getElementById("ok").style.display = 'block';
-            document.getElementById("myform").reset();
-          })
-      }
-
-      function noThankYou() {
-        document.getElementById("ok").style.display = 'none';
-      }
-  </script>
+</div>
+<!-- End Contact Form -->
 
 @include( 'footer' );
