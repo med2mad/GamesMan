@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('file');
             $table->string('url')->nullable();
             $table->string('thumbnail')->default('none.jpg');
             $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(1);
-            $table->string('category')->nullable();
+            $table->string('genre')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

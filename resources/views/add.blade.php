@@ -31,8 +31,8 @@
                 <div class="row">
                   <div class="col-6">
                     <div class="form-group">
-                      <label class="text-black" for="fname">Name</label>
-                      <input name="name" type="text" class="form-control" id="fname">
+                      <label class="text-black" for="title">Title</label>
+                      <input name="title" type="text" class="form-control" id="title">
                     </div>
                   </div>
                   <div class="col-6">

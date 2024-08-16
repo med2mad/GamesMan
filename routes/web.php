@@ -13,9 +13,15 @@ Route::get('/play', function () {
     return view('play', ['page'=>'play', 'file'=>request('file'), 'url'=>request('url')]);
 });
 
-Route::get('/page/games', function () {
-    $data = Game::orderBy('id','desc');
-    return view('games', ['data'=>$data->get(), 'page'=>'games']);
+Route::get('/page/games', function (Request $request) {
+    $title = $request->input('title');
+    $sortBy = $request->input('sort');
+    $sortBy = $sortBy?$sortBy:'popularity';
+    $order = $request->input('order');
+    $order = $order?$order:'desc';
+
+    $data = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order);
+    return view('games', ["data"=>$data->get(), "page"=>'games', "title"=>$title, "sortBy"=>$sortBy, "order"=>$order]);
 });
 
 Route::get('/page/{page}', function ($page) {
@@ -39,8 +45,8 @@ Route::post('/', function (Request $request) {
     }
 
     $data = Game::create([
-        'name'=>$request->input('name'), 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
-        'category'=>$request->input('category'), 'screenshot'=>$photoName, 
+        'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'), 'thumbnail'=>$photoName, 
+        'genre'=>$request->input('genre'), 'screenshot'=>$photoName, 
         'description'=>$request->input('description'),
     ]);
 
