@@ -1,4 +1,4 @@
-@include( 'header' );
+@include( 'header' )
 
 @if($file)
 
@@ -31,4 +31,4 @@
 
 
 
- @include( 'footer' );
+ @include( 'footer' )

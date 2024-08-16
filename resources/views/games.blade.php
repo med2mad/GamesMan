@@ -1,5 +1,4 @@
-@include( 'header' );
-
+@include( 'header' )
 
 <form action="/page/games" method="GET">
 	<label for="title">Search : </label>
@@ -16,6 +15,8 @@
 	</select>
 	<input type="submit" value="Search"/>
 </form>
+
+{{ $data->links('pagination::bootstrap-4') }}
 
 <!-- Start services Section -->
 <div class="untree_co-section product-section before-footer-section" style="margin-top:4rem; padding-bottom:0 !important;">
@@ -51,4 +52,4 @@
 <!-- End services Section -->
 
 
-@include( 'footer' );
+@include( 'footer' )

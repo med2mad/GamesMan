@@ -1,4 +1,4 @@
-@include( 'header' );
+@include( 'header' )
 
 		
 		<!-- Start Contact Form -->
@@ -96,4 +96,4 @@
   <!-- End Contact Form -->
 
 		
-  @include( 'footer' );
+  @include( 'footer' )

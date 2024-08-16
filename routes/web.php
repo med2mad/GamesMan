@@ -20,7 +20,7 @@ Route::get('/page/games', function (Request $request) {
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order)->paginate(3);
+    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order)->paginate(20);
     return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortBy"=>$sortBy, "order"=>$order]);
 });
 

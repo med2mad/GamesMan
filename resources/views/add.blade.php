@@ -1,4 +1,4 @@
-@include( 'header' );
+@include( 'header' )
 
 <!-- Start Contact Form -->
 <div class="untree_co-section">
@@ -74,4 +74,4 @@
 </div>
 <!-- End Contact Form -->
 
-@include( 'footer' );
+@include( 'footer' )
