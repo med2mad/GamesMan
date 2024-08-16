@@ -15,13 +15,13 @@ Route::get('/play', function () {
 
 Route::get('/page/games', function (Request $request) {
     $title = $request->input('title');
-    $sortBy = $request->input('sort');
-    $sortBy = $sortBy?$sortBy:'popularity';
+    $sortby = $request->input('sortby');
+    $sortby = $sortby?$sortby:'popularity';
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortBy, $order)->paginate(20);
-    return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortBy"=>$sortBy, "order"=>$order]);
+    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortby, $order)->paginate(20);
+    return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 
 Route::get('/page/{page}', function ($page) {
