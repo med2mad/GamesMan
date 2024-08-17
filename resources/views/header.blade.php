@@ -8,27 +8,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="/cross.svg">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="/cross.svg">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+  	<meta name="description" content="" />
+  	<meta name="keywords" content="bootstrap, bootstrap4" />
 
-		<!-- Bootstrap CSS -->
-		<link href="/css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="/css/tiny-slider.css" rel="stylesheet">
-		<link href="/css/style.css" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="/css/tiny-slider.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 
-		<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
-		<!--server(cannot have emulator in infinityfree.com) <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script> --> 
+	<!--server(cannot have emulator in infinityfree.com) <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script> --> 
 
-
-		<title>GamesMan</title>
-	</head>
+	<title>GamesMan</title>
+</head>
 
 	<body>
 
@@ -90,13 +89,22 @@
 								<div class="splide__track">
 									<ul class="splide__list" style="height:50%;">
 										<li class="splide__slide">
-											<img src="/images/products/herobomb.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/header/flashpoint-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="/images/products/gun.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/header/kongregate-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="/images/products/game.jpg" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/header/gamemonetize-logo.png" class="img-fluid" style="position:absolute;top:0;">
+										</li>
+										<li class="splide__slide">
+											<img src="/images/header/Newgrounds-Logo.png" class="img-fluid" style="position:absolute;top:0;">
+										</li>
+										<li class="splide__slide">
+											<img src="/images/header/Unity_2021-logo.png" class="img-fluid" style="position:absolute;top:0;">
+										</li>
+										<li class="splide__slide">
+											<img src="/images/header/twoplayergames-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 									</ul>
 								</div>
