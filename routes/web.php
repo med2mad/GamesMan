@@ -31,8 +31,8 @@ Route::get('/page/{page}', function ($page) {
 
 Route::post('/', function (Request $request) {
     $request->validate(['title' => 'required|max:255']);
-    $request->validate(['url' => 'required_without_all:file']);
-    $request->validate(['file' => 'file|mimes:swf|required_without_all:url']);
+    $request->validate(['url' => 'required_without:file|max:255']);
+    $request->validate(['file' => 'file|mimes:swf|required_without:url']);
     
     $gamefile = '';
     if($request->hasFile('file') and $request->file('file')->isValid()) {
@@ -58,7 +58,7 @@ Route::post('/', function (Request $request) {
     $data = Game::create([
         'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'),
         'genre'=>$request->input('genre'), 'screenshot'=>$screenshot, 'thumbnail'=>$thumbnail, 
-        'description'=>$request->input('description'),
+        'instructions'=>$request->input('instructions'),
     ]);
 
     return view('add', ['page'=>'add', "success"=>'success']);

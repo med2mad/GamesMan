@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(1);
             $table->string('genre')->nullable();
-            $table->text('description')->nullable();
+            $table->text('instructions')->nullable();
             $table->timestamps();
         });
     }

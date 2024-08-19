@@ -41,7 +41,7 @@
         <p class="mb-4"><img src="/images/stars/{{$game->popularity}}.png" style="width:100px;"> </p>
 
         <h3 style="text-decoration:underline; margin-bottom:0;">Instructions:</h3>
-        <p class="mb-4" style="margin-left:10px; white-space:pre-wrap;">{{$game->description}}</p>
+        <p class="mb-4" style="margin-left:10px; white-space:pre-wrap;">{{$game->instructions}}</p>
     </div>
 
 </div>
