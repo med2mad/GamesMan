@@ -9,8 +9,9 @@ Route::get('/', function () {
     return view('index', ['page'=>'index']);
 });
 
-Route::get('/play', function () {
-    return view('play', ['page'=>'play', 'file'=>request('file'), 'url'=>request('url')]);
+Route::get('/play/{id}', function ($id) {
+    $data = Game::where('id', $id)->get();
+    return view('play', ['page'=>'play', 'game'=>$data[0]]);
 });
 
 Route::get('/page/games', function (Request $request) {
@@ -20,7 +21,7 @@ Route::get('/page/games', function (Request $request) {
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortby, $order)->paginate(20);
+    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortby, $order)->orderBy('id', 'asc')->paginate(20);
     return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 
@@ -29,14 +30,12 @@ Route::get('/page/{page}', function ($page) {
 });
 
 Route::post('/', function (Request $request) {
-    if (!$request->input('title'))
-    { return view('add', ['page'=>'add', "error"=>'Title required']); }
-    else if(!$request->input('url') && !$request->hasFile('file'))
-    { return view('add', ['page'=>'add', "error"=>'Game File/Url required']); }
-
+    $request->validate(['title' => 'required|max:255']);
+    $request->validate(['url' => 'required_without_all:file']);
+    $request->validate(['file' => 'file|mimes:swf|required_without_all:url']);
+    
     $gamefile = '';
     if($request->hasFile('file') and $request->file('file')->isValid()) {
-        $request->validate(['file' => 'file|mimes:swf']);
         $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));

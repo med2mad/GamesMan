@@ -23,6 +23,9 @@
               <label class="text-black" for="title">Title (*)</label>
               <input name="title" type="text" class="form-control" id="title" required />
             </div>
+            @error('title')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
 
             <div class="row">
               <div class="col-6">

@@ -84,21 +84,21 @@
 					<div class="col-lg-7" style="padding-top:50px;">
 						<div class="hero-img-wrap">
 							<div class="splide" style="position:relative;">
-								<div style="position:absolute;top:0;left:0;z-index:99; width:400px;height:100%; background-image:linear-gradient(to right, #3b5d50, rgba(0,0,0,0));"></div>
-								<div style="position:absolute;top:0;right:0;z-index:99; width:100px;height:100%; background-image:linear-gradient(to left, #3b5d50, rgba(0,0,0,0));"></div>
+								<div class="startcarosel"></div>
+								<div class="endcarosel"></div>
 								<div class="splide__track">
 									<ul class="splide__list" style="height:50%;">
 										<li class="splide__slide">
 											<img src="/images/header/flashpoint-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="/images/header/kongregate-logo.png" class="img-fluid" style="position:absolute;top:0;">
-										</li>
-										<li class="splide__slide">
 											<img src="/images/header/gamemonetize-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="/images/header/Newgrounds-Logo.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/header/Newgrounds-logo.png" class="img-fluid" style="position:absolute;top:0;">
+										</li>
+										<li class="splide__slide">
+											<img src="/images/header/kongregate-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
 											<img src="/images/header/Unity_2021-logo.png" class="img-fluid" style="position:absolute;top:0;">
