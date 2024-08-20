@@ -1,4 +1,4 @@
-@include( 'header' )
+@include( 'partials.header' )
 
 <form action="/page/games" method="GET">
 	<label for="title">Search : </label>
@@ -24,26 +24,24 @@
 		<div class="row">
 
 			@foreach($data as $game)
-				@if($game->valid)
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="/play/{{$game->id}}">
-							<img
-							onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
-							onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
-							src="/images/thumbnails/{{$game->thumbnail}}"
-							class="img-fluid product-thumbnail"
-							>
-							<h3 class="product-title">{{$game->title}}</h3>
-							<p class="product-price">
-								Genre : {{$game->genre}}<br>
-								Popularity : <img src="/images/stars/{{$game->popularity}}.png" style="width:100px;">
-							</p>
-							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-				@endif
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<a class="product-item" href="/play/{{$game->id}}">
+						<img
+						onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
+						onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
+						src="/images/thumbnails/{{$game->thumbnail}}"
+						class="img-fluid product-thumbnail"
+						>
+						<h3 class="product-title">{{$game->title}}</h3>
+						<p class="product-price">
+							Genre : {{$game->genre}}<br>
+							Popularity : <img src="/images/stars/{{$game->popularity}}.png" style="width:100px;">
+						</p>
+						<span class="icon-cross">
+							<img src="/images/cross.svg" class="img-fluid">
+						</span>
+					</a>
+				</div> 
 			@endforeach
 			
 		</div>
@@ -51,4 +49,4 @@
 </div>
 <!-- End services Section -->
 
-@include( 'footer' )
+@include( 'partials.footer' )

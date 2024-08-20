@@ -21,7 +21,8 @@ Route::get('/page/games', function (Request $request) {
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $paginator = Game::where('title', 'like', '%'.$title.'%')->orderBy($sortby, $order)->orderBy('id', 'asc')->paginate(20);
+    $paginator = Game::where('title', 'like', '%'.$title.'%')->where('valid', true)
+                        ->orderBy($sortby, $order)->orderBy('id', 'asc')->paginate(20);
     return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 

@@ -1,4 +1,4 @@
-@include( 'header' )
+@include( 'partials.header' )
 
 		<!-- Start Product Section -->
 		<div class="product-section" style="margin-bottom: 30px;">
@@ -236,4 +236,4 @@
 		<!-- End Blog Section -->	
 
 
-	@include( 'footer' )
+	@include( 'partials.footer' )
