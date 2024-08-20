@@ -35,7 +35,7 @@
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo" style="width:50px"><span>.</span></a>
+				<a class="navbar-brand" href="/"><img src="/images/logo-nav.png" alt="logo" height="20px"><span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -68,17 +68,16 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-		<div class="hero" style="margin-bottom: 60px;">
+		<div class="hero" style="margin-bottom:60px; position: relative;">
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-lg-5">
 						<div class="intro-excerpt">
-							<h1>About-Us</h1>
-							<p class="mb-4">Point at a target, and we will assure it gets the Ass-Assassination it diserves.</p>
-							<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+							<img src="/images/logo-hero.png" alt="" class="mb-1">
+							<p><a href="/page/games" class="btn btn-secondary me-2">All Games</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 						</div>
 					</div>
-					<div class="col-lg-7" style="padding-top:50px;">
+					<div class="col-lg-7">
 						<div class="hero-img-wrap">
 							<div class="splide" style="position:relative;">
 								<div class="startcarosel"></div>
@@ -110,5 +109,28 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="wave">
+				<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+					<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+				</svg>
+			</div>
 		</div>
+
 		<!-- End Hero Section -->
+
+		<div class="wave2">
+			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+				<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+			</svg>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", (event) => {
+				document.querySelector("li.page-item.active > span").style.backgroundColor="gray"
+				document.querySelector("li.page-item.active > span").style.borderColor="gray"
+				document.querySelector("li.page-item.disabled > span").style.backgroundColor="gray"
+				document.querySelector("li.page-item.disabled > span").style.borderColor="gray"
+			})
+			
+		</script>

@@ -1,22 +1,26 @@
 @include( 'partials.header' )
 
-<form action="/page/games" method="GET">
-	<label for="title">Search : </label>
-	<input name="title" value="{{$title}}" type="text" id="title"/>
-	<label for="sortby">Sort by : </label>
-	<select name="sortby" id="sortby">
-		<option value="popularity" {{$sortby=='popularity'?'selected':''}}>Popularity</option>
-		<option value="title" {{$sortby=='title'?'selected':''}}>Title</option>
-		<option value="genre" {{$sortby=='genre'?'selected':''}}>Genre</option>
-	</select>
-	<select name="order">
-		<option value="asc" {{$order=='asc'?'selected':''}}>Asc</option>
-		<option value="desc" {{$order=='desc'?'selected':''}}>Desc</option>
-	</select>
-	<input type="submit" value="Search"/>
-</form>
+<div style="display:flex; justify-content:space-between;">
+	<div>
+		<form action="/page/games" method="GET">
+			<label for="title">Search : </label>
+			<input name="title" value="{{$title}}" type="text" id="title"/>
+			<label for="sortby">Sort by : </label>
+			<select name="sortby" id="sortby">
+				<option value="popularity" {{$sortby=='popularity'?'selected':''}}>Popularity</option>
+				<option value="title" {{$sortby=='title'?'selected':''}}>Title</option>
+				<option value="genre" {{$sortby=='genre'?'selected':''}}>Genre</option>
+			</select>
+			<select name="order">
+				<option value="asc" {{$order=='asc'?'selected':''}}>Asc</option>
+				<option value="desc" {{$order=='desc'?'selected':''}}>Desc</option>
+			</select>
+			<input type="submit" value="Search"/>
+		</form>
+	</div>
 
-{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
+	{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
+</div>
 
 <!-- Start services Section -->
 <div class="untree_co-section product-section before-footer-section" style="margin-top:4rem; padding-bottom:0 !important;">
