@@ -1,6 +1,6 @@
 @include( 'partials.header' )
 
-<div style="display:flex; gap:10px; justify-content:center;">
+<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
 
     <div style="max-width:960px;">
         @if($game->file)
