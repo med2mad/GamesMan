@@ -841,4 +841,13 @@ textarea {
     text-align: center;
   }
 
-
+  .search{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:10px;
+    border-bottom:solid 1px black;
+    padding-bottom:10px;
+  }
