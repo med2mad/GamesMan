@@ -36,8 +36,10 @@
 	{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
 </div>
 
+<hr style="width:75%; margin: 25px auto;">
+
 <!-- Start services Section -->
-<div class="untree_co-section product-section before-footer-section" style="margin-top:4rem; padding-bottom:0 !important;">
+<div class="untree_co-section product-section before-footer-section" style="padding:0 !important;">
 	<div class="container">
 		<div class="row">
 

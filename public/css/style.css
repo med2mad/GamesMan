@@ -836,7 +836,7 @@ textarea {
     background-color: #3b5d50;
     border-color: #3b5d50;
     border-radius: 100%;
-    margin: 0 5px;
+    margin: 0 2px;
     width:50px;
     text-align: center;
   }
@@ -848,6 +848,4 @@ textarea {
     flex-wrap:wrap;
     justify-content:space-around;
     gap:10px;
-    border-bottom:solid 1px black;
-    padding-bottom:10px;
   }
