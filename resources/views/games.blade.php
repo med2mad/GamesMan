@@ -1,11 +1,12 @@
 @include( 'partials.header' )
 
+<fieldset>
+<legend><div>Filter</div></legend>
 <div class="search">
 	<div>
 		<form action="/page/games" method="GET">
 			<div class="row" style="align-items:flex-end;">
 				<div class="col-5">
-					<label for="title">Search : </label>
 					<input name="title" value="{{$title}}" type="text" id="title" class="form-control" placeholder="Title"/>
 				</div>
 				<div class="col-4">
@@ -26,7 +27,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-2">
+				<div class="col-3">
 					<input type="submit" value="Search" class="btn btn-primary-hover-outline" />
 				</div>
 			</div>
@@ -36,8 +37,8 @@
 	{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
 
 </div>
-
-<div class="devider"></div>
+</fieldset>
+<!-- <div class="devider"></div> -->
 
 
 <!-- Start services Section -->
@@ -70,8 +71,6 @@
 	</div>
 </div>
 <!-- End services Section -->
-
-
 
 <script>
 	document.addEventListener("DOMContentLoaded", (event) => {

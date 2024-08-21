@@ -198,4 +198,36 @@
 		</div>
 		<!-- End Popular Product -->
 
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", (event) => {
+				gsap.registerPlugin(ScrollTrigger);
+
+				gsap.from(document.querySelectorAll('.div1'), {
+					xPercent:-70,
+					opacity:0,
+					scrollTrigger:{trigger:'.div1', start:"top 100%", end:'bottom 90%', scrub:true}
+				});
+				gsap.from(document.querySelectorAll('.div2'), {
+					xPercent:70,
+					opacity:0,
+					scrollTrigger:{trigger:'.div2', start:"top 100%", end:'bottom 90%', scrub:true}
+				});
+
+				gsap.from(document.querySelectorAll('.div3'), {
+					xPercent:-70,
+					opacity:0,
+					scrollTrigger:{trigger:'.div3', start:"top 100%", end:'bottom 90%', scrub:true}
+				});
+				gsap.from(document.querySelectorAll('.div4'), {
+					xPercent:70,
+					opacity:0,
+					scrollTrigger:{trigger:'.div4', start:"top 100%", end:'bottom 90%', scrub:true}
+				});
+			});
+		</script>
+
+		<script src="/js/gsap.min.js"></script>
+		<script src="/js/ScrollTrigger.min.js"></script>
+
 	@include( 'partials.footer' )

@@ -88,6 +88,13 @@
 		<!-- End Footer Section -->	
 
 
+		<script src="/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/tiny-slider.js"></script>
+		<script src="/js/custom.js"></script>
+
+		<script src="/js/splide.min.js"></script>
+		<script src="/js/splide-extension-auto-scroll.min.js"></script>
+	
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				var splide = new Splide('.splide', {
@@ -103,16 +110,6 @@
 			});
 		</script>
 	
-		<script src="/js/bootstrap.bundle.min.js"></script>
-		<script src="/js/tiny-slider.js"></script>
-		<script src="/js/custom.js"></script>
-
-		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
-	
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
 	</body>
 
 </html>

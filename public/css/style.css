@@ -15,7 +15,7 @@
 }
 
 .hero{
-  padding: 20px 0 20px !important;
+  padding: 20px 0 0 !important;
 }
 .splide__list img{width:100%; height:75%; filter:opacity(40%);}
 
@@ -47,7 +47,7 @@ a {
 
 .custom-navbar {
   background: #3b5d50 !important;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px; }
   .custom-navbar .navbar-brand {
     font-size: 32px;
@@ -826,9 +826,11 @@ textarea {
   .hero .intro-excerpt .headertext b{
     color:white; font-size: 1.2rem;
   }
-
   .hero .intro-excerpt img{
     margin-left: 50px;
+  }
+  .hero .intro-excerpt p{
+    margin-bottom: 0;
   }
 
   .pagination .page-item .page-link{
@@ -841,26 +843,42 @@ textarea {
     text-align: center;
   }
 
-  .search{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    gap:10px;
-  }
-
-  .devider{
-    border-bottom: solid 3px #3b5d50;
-    width : 70%;
-    margin: 10px auto 25px  auto;
-    padding: 0;
-    border-radius: 50%;
-}
-
 .popular-product .thumbnail .img-fluid{
   height: 120px;
   border-radius: 15%;
   box-shadow: -10px 10px #dce5e4;
+}
 
+.wave svg{
+  height:255px;
+}
+
+fieldset{
+  width : 75%;
+  margin: 10px auto 25px  auto;
+  border-radius: 10px;
+  border: solid 3px #3b5d50;
+  position: relative;
+  padding: 0 10px 10px 10px;
+}
+fieldset legend{
+  position: absolute;
+  top: -0.8em;
+  left: 10px;
+  color: white;
+  margin:0;
+}
+fieldset legend div{
+  background-color: #3b5d50;
+  display: inline-block !important;
+  padding:4px 10px;
+  border-radius: 20% 20% 20% 20%;
+}
+
+.search{
+  display:flex;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:10px;
 }
