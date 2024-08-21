@@ -65,7 +65,7 @@
               <input name="genre" type="text" class="form-control" id="genre" />
             </div>
 
-            <div class="form-group mb-5">
+            <div class="form-group mb-4">
               <label class="text-black" for="instructions">Instructions</label>
               <textarea name="instructions" class="form-control" id="instructions" cols="30" rows="5"></textarea>
             </div>

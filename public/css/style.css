@@ -228,7 +228,7 @@ a {
   color: #2f2f2f; }
 
 .product-section {
-  padding-top:4rem; padding-bottom:1rem; padding-left:0; padding-right:0;}
+  padding-top:2rem; padding-bottom:2rem; padding-left:0; padding-right:0;}
   .product-section .product-item {
     text-align: center;
     text-decoration: none;
@@ -849,3 +849,18 @@ textarea {
     justify-content:space-around;
     gap:10px;
   }
+
+  .devider{
+    border-bottom: solid 3px #3b5d50;
+    width : 70%;
+    margin: 10px auto 25px  auto;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.popular-product .thumbnail .img-fluid{
+  height: 120px;
+  border-radius: 15%;
+  box-shadow: -10px 10px #dce5e4;
+
+}

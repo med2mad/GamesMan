@@ -3,23 +3,29 @@
 		<!-- Start Product Section -->
 		<div class="product-section" style="margin-bottom: 30px;">
 			<div class="container">
-				<div class="row">
+				<div class="row" style="align-items:center;">
 
 					<!-- Start Column 1 -->
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-						<h2 class="mb-4 section-title">Our popular services at this moment.</h2>
-						<p class="mb-4">Lorem ipsum dolor sit amet. </p>
-						<p><a href="shop.html" class="btn">Explore more</a></p>
+						<h2 class="mb-4 section-title">Most popular games at this moment.</h2>
+						<p><a href="shop.html" class="btn">All Games</a></p>
 					</div> 
 					<!-- End Column 1 -->
 
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="cart.html">
-							<img src="/images/services/hitman.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service 1</h3>
-							<strong class="product-price">$45.00</strong>
-
+						<a class="product-item" href="/play/3">
+							<img 
+								onmouseover="this.src='/images/screenshots/Flipper Cube.jpg'"
+								onmouseout="this.src='/images/thumbnails/Flipper Cube.jpg'"
+								src="/images/thumbnails/Flipper Cube.jpg"
+								class="img-fluid product-thumbnail"
+							>
+							<h3 class="product-title">Flipper Cube</h3>
+							<p class="product-price">
+								Genre : puzzle<br>
+								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+							</p>
 							<span class="icon-cross">
 								<img src="/images/cross.svg" class="img-fluid">
 							</span>
@@ -29,30 +35,44 @@
 
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="cart.html">
-							<img src="/images/services/ezio-banner_1280x720-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service 2</h3>
-							<strong class="product-price">$35.00</strong>
-
+						<a class="product-item" href="/play/100">
+							<img 
+								onmouseover="this.src='/images/screenshots/grand clash arena.jpg'"
+								onmouseout="this.src='/images/thumbnails/grand clash arena.jpg'"
+								src="/images/thumbnails/grand clash arena.jpg"
+								class="img-fluid product-thumbnail"
+							>
+							<h3 class="product-title">Grand Clash Arena</h3>
+							<p class="product-price">
+								Genre : battle royale<br>
+								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+							</p>
 							<span class="icon-cross">
 								<img src="/images/cross.svg" class="img-fluid">
 							</span>
 						</a>
-					</div>
+					</div> 
 					<!-- End Column 3 -->
 
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="cart.html">
-							<img src="/images/services/kiilmyslf-150x150.jpg" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Service 3</h3>
-							<strong class="product-price">$25.00</strong>
-
+						<a class="product-item" href="/play/124">
+							<img 
+								onmouseover="this.src='/images/screenshots/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
+								onmouseout="this.src='/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
+								src="/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png"
+								class="img-fluid product-thumbnail"
+							>
+							<h3 class="product-title">Run</h3>
+							<p class="product-price">
+								Genre : runner<br>
+								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+							</p>
 							<span class="icon-cross">
 								<img src="/images/cross.svg" class="img-fluid">
 							</span>
 						</a>
-					</div>
+					</div> 
 					<!-- End Column 4 -->
 
 				</div>
@@ -133,18 +153,17 @@
 		<!-- Start Popular Product -->
 		<div class="popular-product" id="popular">
 			<div class="container">
+				<h2 class="section-title">Recent added games</h2>
 				<div class="row">
-
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="/images/products/denix.png" alt="Image" class="img-fluid" style="height:120px;">
-								<!-- <img src="/images/products/denix.png" alt="Image" class="img-fluid"> -->
+								<img src="/images/screenshots/1724104252_9dd86090-8627-4aee-923f-84777d8b4f0c.png" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Bomb</h3>
-								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
-								<p><a href="#">Read More</a></p>
+								<h3>Level Up!</h3>
+								<p>Genre : platformer</p>
+								<p><a href="/play/160"><u>Play</u></a></p>
 							</div>
 						</div>
 					</div>
@@ -152,12 +171,12 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="/images/products/gun.png" alt="Image" class="img-fluid" style="height:100px;">
+								<img src="/images/screenshots/225b4262-14da-4ab6-99d9-382ba01fb021.png" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Gun</h3>
-								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
-								<p><a href="#">Read More</a></p>
+								<h3>Animator vs animation</h3>
+								<p>Genre : arcade</p>
+								<p><a href="/play/105"><u>Play</u></a></p>
 							</div>
 						</div>
 					</div>
@@ -165,75 +184,18 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="/images/product-3.png" alt="Image" class="img-fluid" style="height:120px;">
+								<img src="/images/screenshots/d70cc98a-ea48-4aaa-8330-83fa09deba99.png" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Ergonomic Chair</h3>
-								<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio </p>
-								<p><a href="#">Read More</a></p>
+								<h3>King of Fighters Wing</h3>
+								<p>Genre : fighter</p>
+								<p><a href="/play/75"><u>Play</u></a></p>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 		<!-- End Popular Product -->
-
-		<!-- Start Blog Section -->
-		<div class="blog-section">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-md-6">
-						<h2 class="section-title">Recent Blog</h2>
-					</div>
-					<div class="col-md-6 text-start text-md-end">
-						<a href="#" class="more">View All Posts</a>
-					</div>
-				</div>
-
-				<div class="row">
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="/images/products/glock.jpg" alt="Image" class="img-fluid"></a>
-							<div class="post-content-entry">
-								<h3><a href="#">First Time Home Owner Ideas</a></h3>
-								<div class="meta">
-									<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="/images/products/joe-ei-cl8xcbco-unsplash-scaled-1-1024x682.jpg" alt="Image" class="img-fluid"></a>
-							<div class="post-content-entry">
-								<h3><a href="#">How To Keep Your Furniture Clean</a></h3>
-								<div class="meta">
-									<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-						<div class="post-entry">
-							<a href="#" class="post-thumbnail"><img src="/images/products/ca-times.brightspotcdn-1024x768.jpg" alt="Image" class="img-fluid"></a>
-							<div class="post-content-entry">
-								<h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
-								<div class="meta">
-									<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<!-- End Blog Section -->	
-
 
 	@include( 'partials.footer' )

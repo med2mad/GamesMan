@@ -34,9 +34,11 @@
 	</div>
 
 	{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
+
 </div>
 
-<hr style="width:75%; margin: 25px auto;">
+<div class="devider"></div>
+
 
 <!-- Start services Section -->
 <div class="untree_co-section product-section before-footer-section" style="padding:0 !important;">
@@ -47,10 +49,10 @@
 				<div class="col-12 col-md-4 col-lg-3 mb-5">
 					<a class="product-item" href="/play/{{$game->id}}">
 						<img
-						onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
-						onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
-						src="/images/thumbnails/{{$game->thumbnail}}"
-						class="img-fluid product-thumbnail"
+							onmouseover="this.src='/images/screenshots/{{$game->screenshot}}'"
+							onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
+							src="/images/thumbnails/{{$game->thumbnail}}"
+							class="img-fluid product-thumbnail"
 						>
 						<h3 class="product-title">{{$game->title}}</h3>
 						<p class="product-price">
