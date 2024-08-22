@@ -1,4 +1,4 @@
-@include( 'partials.header' )
+@include( 'partials.nav' )
 
 <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
 

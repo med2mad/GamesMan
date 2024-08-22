@@ -1,4 +1,5 @@
-@include( 'partials.header' )
+@include( 'partials.nav' )
+@include( 'partials.hero' )
 
 		<!-- Start Product Section -->
 		<div class="product-section" style="margin-bottom: 30px;">
@@ -8,7 +9,7 @@
 					<!-- Start Column 1 -->
 					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
 						<h2 class="mb-4 section-title">Most popular games at this moment.</h2>
-						<p><a href="shop.html" class="btn">All Games</a></p>
+						<p><a href="/page/games" class="btn">All Games</a></p>
 					</div> 
 					<!-- End Column 1 -->
 
@@ -81,30 +82,30 @@
 		<!-- End Product Section -->
 
 		<!-- Start Why Choose Us Section -->
-		<div class="why-choose-section" style="padding: 4rem 0 0 0;">
+		<div class="why-choose-section" style="padding: 2rem 0 0 0;">
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-lg-6 div3">
-						<h2 class="section-title">Why Choose Us</h2>
+						<h2 class="section-title">Help us preserve games and animations from the web.</h2>
 						
 						<div class="row my-5">
 							<div class="col-6 col-md-6">
 								<div class="feature">
 									<div class="icon">
-										<img src="/images/truck.svg" alt="Image" class="imf-fluid">
+										<img src="/images/flash.png" alt="Image" class="imf-fluid">
 									</div>
-									<h3>Fast &amp; Free Shipping</h3>
-									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+									<h3>Flash is Back !</h3>
+									<p>Since Adobe blocked Flash Player in January 12, 2021, new ways are made to play '.swf' files safely, like the popular emulator "Ruffle".</p>
 								</div>
 							</div>
 
 							<div class="col-6 col-md-6">
 								<div class="feature">
 									<div class="icon">
-										<img src="/images/support.svg" alt="Image" class="imf-fluid">
+										<img src="/images/support.png" alt="Image" class="imf-fluid">
 									</div>
-									<h3>24/7 Support</h3>
-									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+									<h3>Join the community effort</h3>
+									<p>Since December 2017, over 200,000 games and animations have been preserved across more than a hundred browser plugins and web technologies.</p>
 								</div>
 							</div>
 
@@ -113,7 +114,7 @@
 
 					<div class="col-lg-5 div4">
 						<div class="img-wrap">
-							<img src="/images/home/ww1.jpg" alt="Image" class="img-fluid">
+							<img src="/images/home/ww1.png" alt="Image" class="img-fluid">
 						</div>
 					</div>
 
@@ -128,22 +129,26 @@
 				<div class="row justify-content-between">
 					<div class="col-lg-7 mb-5 mb-lg-0 div1">
 						<div class="imgs-grid">
-							<div class="grid grid-1"><img src="/images/home/methode.jpg" alt="Untree.co" ></div>
+							<div class="grid grid-1"><img src="/images/home/methode.png" height="350" width="400" alt="Untree.co" ></div>
 							<div class="grid grid-2"><img src="/images/home/Jane-Smith.jpg" alt="Untree.co"></div>
-							<div class="grid grid-3"><img src="/images/home/assassination-classroom.jpg" alt="Untree.co"></div>
+							<div class="grid grid-3"><img src="/images/home/assassination-classroom.jpg" width="300" height="250" alt="Untree.co"></div>
 						</div>
 					</div>
 					<div class="col-lg-5 ps-lg-5 div2">
-						<h2 class="section-title mb-4">We Help You Make An Ass-Hole Free Life</h2>
-						<p>We are the Number one assassination company on earth (because there is no other in the planet). The goal of our company is to make the world a better place for our clients by providing them with different kinds of trained experts that can go and shut an Ass-Hole down by style.</p>
+						<h2 class="section-title mb-4">Oul Goal.</h2>
+						<p>
+							We pick games that meet today's expectations from multiple websites/archives,
+							so you wont have to search platforms that can even mix different media types (like animations/images/audio/...).<br>
+							To go use the websites yourself, links are down below.
+						</p>
 
 						<ul class="list-unstyled custom-list my-4">
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
-							<li>Donec vitae odio quis nisl dapibus malesuada</li>
+							<li>Our platform is famiy frendly</li>
+							<li>All genres of games all available</li>
+							<li>Add a game you find to always find it here</li>
+							<li>To share a game you made, submit it here</li>
 						</ul>
-						<p><a herf="#" class="btn">Explore</a></p>
+						<p><a herf="/page/games" class="btn">Explore</a></p>
 					</div>
 				</div>
 			</div>

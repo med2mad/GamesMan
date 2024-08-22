@@ -307,9 +307,9 @@ a {
       background-image: url("../images/dots-yellow.svg");
       background-repeat: no-repeat;
       background-size: contain;
-      -webkit-transform: translate(-40%, -40%);
-      -ms-transform: translate(-40%, -40%);
-      transform: translate(-40%, -40%);
+      -webkit-transform: translate(-10%, -10%);
+      -ms-transform: translate(-10%, -10%);
+      transform: translate(-10%, -10%);
       z-index: -1; }
     .why-choose-section .img-wrap img {
       border-radius: 20px; }
@@ -365,7 +365,7 @@ a {
       .we-help-section .imgs-grid .grid.grid-1 {
         -ms-grid-column: 1;
         -ms-grid-column-span: 18;
-        grid-column: 1 / span 18;
+        grid-column: 2 / span 18;
         -ms-grid-row: 1;
         -ms-grid-row-span: 27;
         grid-row: 1 / span 27; }
@@ -798,6 +798,7 @@ textarea {
     
     .wave .shape-fill {
       fill: #3b5d50;
+      overflow: hidden;
     }
     
     .wave2 {
@@ -857,7 +858,7 @@ fieldset{
   border-radius: 10px;
   border: solid 3px #3b5d50;
   position: relative;
-  margin: 70px auto 70px  auto;
+  margin: 70px auto 40px auto;
   padding: 0 10px 6px 10px;
 }
 fieldset legend{

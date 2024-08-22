@@ -1,4 +1,4 @@
-@include( 'partials.header' )
+@include( 'partials.nav' )
 
 <fieldset>
 <legend><div>Filter</div></legend>

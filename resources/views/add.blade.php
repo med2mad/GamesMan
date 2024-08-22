@@ -1,4 +1,4 @@
-@include( 'partials.header' )
+@include( 'partials.nav' )
 
 <!-- Start Contact Form -->
 <div class="untree_co-section">
