@@ -781,24 +781,23 @@ textarea {
 
       .wave {
         position: absolute;
-        top: 0;
         left: 0;
         width: 200%;
         overflow: hidden;
         line-height: 0;
         z-index: -1;
-    }
+      }
     
     .wave svg {
-        position: relative;
-        display: block;
-        width: calc(300% + 1.3px);
-        height: 299px;
-        transform: rotateY(180deg);
+      position: relative;
+      display: block;
+      width: calc(300% + 1.3px);
+      height: 299px;
+      transform: rotateY(180deg);
     }
     
     .wave .shape-fill {
-        fill: #3b5d50;
+      fill: #3b5d50;
     }
     
     .wave2 {
@@ -809,18 +808,18 @@ textarea {
       overflow: hidden;
       line-height: 0;
       transform: rotate(180deg);
-  }
+    }
   
   .wave2 svg {
-      position: relative;
-      display: block;
-      width: calc(300% + 1.3px);
-      height: 299px;
-      transform: rotateY(180deg);
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 299px;
+    transform: rotateY(180deg);
   }
   
   .wave2 .shape-fill {
-      fill: #3b5d50;
+    fill: #3b5d50;
   }
 
   .hero .intro-excerpt .headertext b{
@@ -854,12 +853,12 @@ textarea {
 }
 
 fieldset{
-  width : 75%;
-  margin: 10px auto 25px  auto;
+  width : 90%;
   border-radius: 10px;
   border: solid 3px #3b5d50;
   position: relative;
-  padding: 0 10px 10px 10px;
+  margin: 70px auto 70px  auto;
+  padding: 0 10px 6px 10px;
 }
 fieldset legend{
   position: absolute;
@@ -881,4 +880,8 @@ fieldset legend div{
   flex-wrap:wrap;
   justify-content:space-between;
   gap:10px;
+}
+
+.custom-navbar .custom-navbar-cta {
+  display: none;
 }

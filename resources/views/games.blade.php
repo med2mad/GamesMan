@@ -3,7 +3,7 @@
 <fieldset>
 <legend><div>Filter</div></legend>
 <div class="search">
-	<div>
+	<div class="filter">
 		<form action="/page/games" method="GET">
 			<div class="row" style="align-items:flex-end;">
 				<div class="col-5">
@@ -11,7 +11,7 @@
 				</div>
 				<div class="col-4">
 					<label for="sortby">Sort by : </label>
-					<div class="row">
+					<div class="row" style="justify-content:center;">
 						<div class="col-7 p-0">
 							<select name="sortby" id="sortby" class="form-control">
 								<option value="popularity" {{$sortby=='popularity'?'selected':''}}>Popularity</option>
