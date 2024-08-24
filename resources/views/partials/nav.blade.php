@@ -3,6 +3,7 @@
 * Template Name: Furni
 * Template Author: Untree.co
 * Template URI: https://untree.co/
+* Template : https://themewagon.com/themes/furni-online-store/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
 <!doctype html>
