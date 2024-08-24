@@ -6,36 +6,14 @@
 				<div class="row g-5">
 					<div class="col-lg-4">
 						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-github"></span></a></li>
+							<li><a href="#"><span class="fa-solid fa-envelope"></span></a></li>
+							<li><a href="#"><span class="fa fa-solid fa-play"></span></a></li>
 							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-						</ul>
 					</div>
 
 					<div class="col-lg-8">
 						<div class="row links-wrap">
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li class="h6">Emulators</li>
-									<li><a href="https://ruffle.rs/">ruffle.rs</a></li>
-									<li><a href="https://chromewebstore.google.com/detail/flash-player-emulator-202/ecbnojockcgfohpopbphhgefkfbigcej?hl=en">Chrome extension</a></li>
-									<li><a href="https://www.adobe.com/products/flashplayer/end-of-life-alternative.html">flash player</a></li>
-								</ul>
-							</div>
-
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li class="h6">Websites</li>
-									<li><a href="#">gamemonetize.com</a></li>
-									<li><a href="#">newgrounds.com</a></li>
-									<li><a href="#">crazygames.com</a></li>
-									<li><a href="#">gamesflow.com</a></li>
-									<li><a href="#">twoplayergames.org</a></li>
-									<li><a href="https://www.kongregate.com/">kongregate.com</a></li>
-								</ul>
-							</div>
-
 							<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
 									<li class="h6">Archives</li>
@@ -44,6 +22,26 @@
 								</ul>
 							</div>
 
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li class="h6">Websites</li>
+									<li><a href="https://gamemonetize.com/">gamemonetize.com</a></li>
+									<li><a href="https://www.newgrounds.com/games">newgrounds.com</a></li>
+									<li><a href="https://www.crazygames.com/">crazygames.com</a></li>
+									<li><a href="https://www.gamesflow.com/">gamesflow.com</a></li>
+									<li><a href="https://www.twoplayergames.org/">twoplayergames.org</a></li>
+									<li><a href="https://www.kongregate.com/">kongregate.com</a></li>
+								</ul>
+							</div>
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li class="h6">Emulators</li>
+									<li><a href="https://ruffle.rs/">ruffle.rs</a></li>
+									<li><a href="https://chromewebstore.google.com/detail/flash-player-emulator-202/ecbnojockcgfohpopbphhgefkfbigcej?hl=en">Chrome extension</a></li>
+									<li><a href="https://www.adobe.com/products/flashplayer/end-of-life-alternative.html">flash player</a></li>
+								</ul>
+							</div>
+							
 							<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
 									<li class="h6">Game Engines</li>

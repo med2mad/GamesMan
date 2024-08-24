@@ -164,7 +164,7 @@ a {
       position: absolute;
       width: 100px;
       height: 317px;
-      background-image: url("../images/dots-light.svg");
+      background-image: url("../images/dots-yellow2.svg");
       background-size: fill;
       background-repeat: no-repeat;
       right: -100px;
@@ -411,7 +411,7 @@ a {
       top: 8px; }
 
 .popular-product {
-  padding: 0 0 7rem 0; }
+  padding: 0 0 3rem 0; }
   .popular-product .product-item-sm h3 {
     font-size: 14px;
     font-weight: 700;
@@ -566,7 +566,7 @@ a {
     opacity: .7; }
 
 .footer-section {
-  padding: 0px 0px 0 0px;
+  padding: 7rem 0px 0 0px;
   color: gray !important;
   /* background: #ffffff;  */
 }
@@ -644,7 +644,7 @@ a {
       font-size: 14px !important; }
 
 .untree_co-section {
-  padding: 1rem 0; }
+  padding: 1rem 0 0 0; }
 
 .form-control {
   height: 50px;
@@ -780,7 +780,6 @@ textarea {
     
     .wave .shape-fill {
       fill: #3b5d50;
-
     }
     
     .wave2 {
@@ -841,7 +840,7 @@ fieldset{
   border-radius: 10px;
   border: solid 3px #3b5d50;
   position: relative;
-  margin: 70px auto 40px auto;
+  margin: 40px auto 20px auto;
   padding: 0 10px 6px 10px;
 }
 fieldset legend{
@@ -855,7 +854,7 @@ fieldset legend div{
   background-color: #3b5d50;
   display: inline-block !important;
   padding:4px 10px;
-  border-radius: 20% 20% 20% 20%;
+  border-radius: 10px;
 }
 
 .search{
@@ -872,8 +871,8 @@ fieldset legend div{
 
 .sofa-img {
   position: absolute;
-  top: -120px;
-  z-index: 1;
+  top: 500px;
+  z-index: -2;
   right: 0; }
   .game{
     margin-bottom: 100px;

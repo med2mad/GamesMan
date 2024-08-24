@@ -28,7 +28,7 @@
 								Popularity : <img src="/images/stars/5.png" style="width:100px;">
 							</p>
 							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
+								<img src="/images/controller.svg" class="img-fluid">
 							</span>
 						</a>
 					</div> 
@@ -49,7 +49,7 @@
 								Popularity : <img src="/images/stars/5.png" style="width:100px;">
 							</p>
 							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
+								<img src="/images/controller.svg" class="img-fluid">
 							</span>
 						</a>
 					</div> 
@@ -70,7 +70,7 @@
 								Popularity : <img src="/images/stars/5.png" style="width:100px;">
 							</p>
 							<span class="icon-cross">
-								<img src="/images/cross.svg" class="img-fluid">
+								<img src="/images/controller.svg" class="img-fluid">
 							</span>
 						</a>
 					</div> 
