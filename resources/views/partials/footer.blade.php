@@ -36,9 +36,9 @@
 							<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
 									<li class="h6">Emulators</li>
-									<li><a href="https://ruffle.rs/">ruffle.rs</a></li>
+									<li><a href="https://ruffle.rs/">Ruffle</a></li>
 									<li><a href="https://chromewebstore.google.com/detail/flash-player-emulator-202/ecbnojockcgfohpopbphhgefkfbigcej?hl=en">Chrome extension</a></li>
-									<li><a href="https://www.adobe.com/products/flashplayer/end-of-life-alternative.html">flash player</a></li>
+									<li><a href="https://helpx.adobe.com/enterprise/kb/eol-adobe-flash-shockwave-player.html">Flash/Shockwave player</a></li>
 								</ul>
 							</div>
 							
@@ -46,7 +46,7 @@
 								<ul class="list-unstyled">
 									<li class="h6">Game Engines</li>
 									<li><a href="https://unity.com/fr">Unity</a></li>
-									<li><a href="https://www.unrealengine.com/fr">unreal engine</a></li>
+									<li><a href="https://www.unrealengine.com/fr">Unreal engine</a></li>
 									<li><a href="https://godotengine.org/">Godot</a></li>
 									<li><a href="https://gamemaker.io">GameMaker</a></li>
 									<li><a href="https://www.rpgmakerweb.com/">RpgMaker</a></li>

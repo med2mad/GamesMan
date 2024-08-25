@@ -21,7 +21,7 @@
 
 
 <!-- Start Contact Form -->
-<fieldset class="addfieldset">
+<fieldset>
 <legend><div>Game info</div></legend>
 
 <div class="untree_co-section">

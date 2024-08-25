@@ -95,7 +95,7 @@
 										<img src="/images/home/controller.png" alt="Image" class="imf-fluid">
 									</div>
 									<h3>Start a game !</h3>
-									<p>Play games picked from a variaty of platforms, or made and shared by game devoloppers using game-engines, converters, remakes or other tools.</p>
+									<p>Play games picked from a variety of platforms, or made and shared here using game-engines, converters, decompilers or other tools.</p>
 								</div>
 							</div>
 
@@ -104,8 +104,8 @@
 									<div class="icon">
 										<img src="/images/home/upload.png" alt="Image" class="imf-fluid">
 									</div>
-									<h3>Sahre your games</h3>
-									<p>If you made a game you want to make available to averyone, upload it here and wait vor it to be validated by an admin.</p>
+									<h3>Share your game</h3>
+									<p>If you made a game you want to make available to everyone, upload it <a href="/page/add">here</a> and wait for it to be validated by an admin.</p>
 								</div>
 							</div>
 
@@ -135,19 +135,20 @@
 						</div>
 					</div>
 					<div class="col-lg-5 ps-lg-5 div4">
-						<h2 class="section-title mb-4">Our Goal</h2>
+						<h2 class="section-title mb-4">Our Advantages</h2>
 						<p>
 							We pick games that meet today's expectations from multiple websites/archives,
-							so you wont have to search platforms that can even mix different media types (like animations/images/audio/...).<br>
-							To go use the websites yourself, links are down below. <br>
-							Content preservation is also one of our goals.
+							so you won't have to search platforms that can even mix media types (animations/images/audio/...).<br>
+							To go use the websites yourself, links are down below.
 						</p>
-
-						<ul class="list-unstyled custom-list my-4">
+						<p style="margin-bottom: 0;">
+							<u>More advantages :</u>
+						</p>
+						<ul class="list-unstyled custom-list mb-4 mt-0">
 							<li>Our platform is famiy frendly</li>
-							<li>All genres of games all available</li>
+							<li>All genres of games are available</li>
 							<li>Add a game you find to always find it here</li>
-							<li>To share a game you made, submit it here</li>
+							<li>Here you can find a lost internet game</li>
 						</ul>
 						<p><a herf="/page/games" class="btn">Explore</a></p>
 					</div>
@@ -171,7 +172,7 @@
 										<img src="/images/home/flash.png" alt="Image" class="imf-fluid">
 									</div>
 									<h3>Flash is Back !</h3>
-									<p>Since Adobe blocked Flash Player in January 12, 2021, new ways are made to play '.swf' files safely, like the popular emulator "Ruffle".</p>
+									<p>Since Adobe blocked Flash Player in January 12, 2021, safe ways are made to play '.swf' files, like the popular "Ruffle" emulator (used here).</p>
 								</div>
 							</div>
 

@@ -19,16 +19,16 @@
 		<!-- zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz -->
 
 
-<fieldset class="searchfieldset">
+<fieldset>
 <legend><div>Filter</div></legend>
 <div class="search">
 	<div class="filter">
 		<form action="/page/games" method="GET">
 			<div class="row" style="align-items:flex-end;">
-				<div class="col-5">
+				<div class="col-5" style="border-right: solid 2px #00000022;">
 					<input name="title" value="{{$title}}" type="text" id="title" class="form-control" placeholder="Title"/>
 				</div>
-				<div class="col-4">
+				<div class="col-4" style="padding: 0px 16px;">
 					<label for="sortby">Sort by : </label>
 					<div class="row" style="justify-content:center;">
 						<div class="col-7 p-0">
@@ -46,7 +46,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-3" style="border-left: solid 2px #00000022; padding-left:10px;">
 					<input type="submit" value="Search" class="btn btn-primary-hover-outline" />
 				</div>
 			</div>
