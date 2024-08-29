@@ -23,7 +23,7 @@
 											<img src="/images/header/gamemonetize-logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
-											<img src="/images/header/Newgrounds-logo.png" class="img-fluid" style="position:absolute;top:0;">
+											<img src="/images/header/Newgrounds-Logo.png" class="img-fluid" style="position:absolute;top:0;">
 										</li>
 										<li class="splide__slide">
 											<img src="/images/header/kongregate-logo.png" class="img-fluid" style="position:absolute;top:0;">

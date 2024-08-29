@@ -108,7 +108,7 @@
                           </svg>
                       </div> <!-- /.icon -->
                       <div class="service-contents">
-                        <p>Linked In link</p>
+                        <p>Portfolio website</p>
                         
                       </div> <!-- /.service-contents-->
                     </div> <!-- /.service -->
@@ -149,8 +149,8 @@
               <div class="">
                 <h2 class="mb-4 section-title">About Me</h2>
                 <p>
-                  "Mohamed Leghdaich", a programmer and web designed. The builder of the "GamesMan" platform with the goal to contribute to the gaming comunity,
-                  and the move to preserve web content that becomes obsolete by the evolution of the internet (especialy old games). <br>
+                  "Mohamed Leghdaich", a programmer and web designed. Builder of the "GamesMan" platform with the goal to contribute to the gaming comunity
+                  and to the move of preserving web content that becomes obsolete by the evolution of the internet (especialy old games). <br>
                   If interested in my web developpement services, or for collaboration, or just to hang out and have a chat, please leave a message.
                 </p>
               </div>

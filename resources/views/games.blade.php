@@ -97,8 +97,6 @@
 		document.querySelector("li.page-item.active > span").style.borderColor="gray"
 		document.querySelector("li.page-item.disabled > span").style.backgroundColor="gray"
 		document.querySelector("li.page-item.disabled > span").style.borderColor="gray"
-	
-		document.querySelector(".pagination").style.margin=0
 	})
 </script>
 

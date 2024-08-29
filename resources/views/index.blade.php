@@ -36,16 +36,16 @@
 
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="/play/100">
+						<a class="product-item" href="/play/124">
 							<img 
-								onmouseover="this.src='/images/screenshots/grand clash arena.jpg'"
-								onmouseout="this.src='/images/thumbnails/grand clash arena.jpg'"
-								src="/images/thumbnails/grand clash arena.jpg"
+								onmouseover="this.src='/images/screenshots/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
+								onmouseout="this.src='/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
+								src="/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png"
 								class="img-fluid product-thumbnail"
 							>
-							<h3 class="product-title">Grand Clash Arena</h3>
+							<h3 class="product-title">Run</h3>
 							<p class="product-price">
-								Genre : battle royale<br>
+								Genre : runner<br>
 								Popularity : <img src="/images/stars/5.png" style="width:100px;">
 							</p>
 							<span class="icon-cross">
@@ -57,16 +57,16 @@
 
 					<!-- Start Column 4 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="/play/124">
+						<a class="product-item" href="/play/78">
 							<img 
-								onmouseover="this.src='/images/screenshots/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
-								onmouseout="this.src='/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png'"
-								src="/images/thumbnails/f74effdd-39d2-413d-93ff-68c912f6dd77.png"
+								onmouseover="this.src='/images/screenshots/bda1e0d7-145f-4c64-b354-bafbc68ccb75.png'"
+								onmouseout="this.src='/images/thumbnails/bda1e0d7-145f-4c64-b354-bafbc68ccb75.png'"
+								src="/images/thumbnails/bda1e0d7-145f-4c64-b354-bafbc68ccb75.png"
 								class="img-fluid product-thumbnail"
 							>
-							<h3 class="product-title">Run</h3>
+							<h3 class="product-title">Bloxorz</h3>
 							<p class="product-price">
-								Genre : runner<br>
+								Genre : puzzle<br>
 								Popularity : <img src="/images/stars/5.png" style="width:100px;">
 							</p>
 							<span class="icon-cross">
@@ -137,7 +137,7 @@
 					<div class="col-lg-5 ps-lg-5 div4">
 						<h2 class="section-title mb-4">Our Advantages</h2>
 						<p>
-							We pick games that meet today's expectations from multiple websites/archives,
+							We pick games that meet today's expectations from multiple websites/archives
 							so you won't have to search platforms that can even mix media types (animations/images/audio/...).<br>
 							To go use the websites yourself, links are down below.
 						</p>
@@ -145,10 +145,10 @@
 							<u>More advantages :</u>
 						</p>
 						<ul class="list-unstyled custom-list mb-4 mt-0">
-							<li>Our platform is famiy frendly</li>
-							<li>All genres of games are available</li>
-							<li>Add a game you find to always find it here</li>
-							<li>Here you can find a lost internet game</li>
+							<li>Our platform is family friendly</li>
+							<li>All game genres are available</li>
+							<li>Add a game you cross<br>to always find it here</li>
+							<li>You can find here a lost internet game</li>
 						</ul>
 						<p><a herf="/page/games" class="btn">Explore</a></p>
 					</div>
@@ -204,7 +204,7 @@
 		<!-- Start Recent added Product -->
 		<div class="popular-product" id="popular">
 			<div class="container">
-				<h2 class="section-title">Recent added games</h2>
+				<h2 class="section-title">Recently added</h2>
 				<div class="row">
 
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
@@ -223,12 +223,12 @@
 					<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 						<div class="product-item-sm d-flex">
 							<div class="thumbnail" style="text-align:center;">
-								<img src="/images/screenshots/1724104252_9dd86090-8627-4aee-923f-84777d8b4f0c.png" alt="Image" class="img-fluid">
+								<img src="/images/screenshots/1724145141_68fdff65-862a-4921-a7a4-da29e72fd76c.png" alt="Image" class="img-fluid">
 							</div>
 							<div class="pt-3">
-								<h3>Level Up!</h3>
-								<p>Genre : platformer</p>
-								<p><a href="/play/160"><u>Play</u></a></p>
+								<h3>Tetris'D</h3>
+								<p>Genre : survival</p>
+								<p><a href="/play/162"><u>Play</u></a></p>
 							</div>
 						</div>
 					</div>
