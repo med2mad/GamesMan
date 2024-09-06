@@ -38,7 +38,8 @@
         <script src="/ruffle/ruffle.js"></script> <!--server (remove line, cannot have emulator on infinityfree) -->
         @else
         <div class="game">
-            <iframe src="{{$game->url}}" width="960" height="600"  scrolling="none" frameborder="0"></iframe>
+        <!-- <iframe src="{{$game->url}}" width="960" height="600"  scrolling="none" frameborder="0"></iframe> -->
+        <iframe src="{{$game->url}}" width="960" height="700"  scrolling="none" frameborder="0"></iframe>
         </div>
         @endif
     </div>
