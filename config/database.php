@@ -17,7 +17,8 @@ return [
     */
 
     'default' => 'mysql', //env('DB_CONNECTION', 'sqlite'),
-    //<!--server--> 'default' => 'infinityfree',
+    
+    // 'default' => 'infinityfree',
     /*
     |--------------------------------------------------------------------------
     | Database Connections
