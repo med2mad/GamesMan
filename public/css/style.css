@@ -874,9 +874,7 @@ fieldset legend div{
   top: 500px;
   z-index: -2;
   right: 0; }
-  .game{
-    margin-bottom: 100px;
-  }
+
 .sofa-img::before {
   content: '';
   position: absolute;

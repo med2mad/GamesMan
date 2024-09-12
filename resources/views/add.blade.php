@@ -21,6 +21,11 @@
 
 
 <!-- Start Contact Form -->
+ 
+<div class="m-3" style="color: rgba(165, 42, 42, 0.582);">
+    (*note) : we support '.swf' files or url address to embed.
+</div>
+
 <fieldset>
 <legend><div>Game info</div></legend>
 

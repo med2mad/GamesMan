@@ -25,22 +25,21 @@
 
     <div style="max-width:960px;">
         @if($game->file)
-        <div id="flash-game-container"></div>
-        <script>
-            window.addEventListener("load", (event) => {
-                const ruffle = window.RufflePlayer.newest();
-                const player = ruffle.createPlayer();
-                const container = document.getElementById("flash-game-container");
-                container.appendChild(player);
-                player.load("/games/{{$game->file}}.swf");
-            });
-        </script>
-        <script src="/ruffle/ruffle.js"></script> <!--server (remove line, cannot have emulator on infinityfree) -->
+            <div id="flash-game-container"></div>
+            <script>
+                window.addEventListener("load", (event) => {
+                    const ruffle = window.RufflePlayer.newest();
+                    const player = ruffle.createPlayer();
+                    const container = document.getElementById("flash-game-container");
+                    container.appendChild(player);
+                    player.load("/games/{{$game->file}}.swf");
+                });
+            </script>
+            <script src="/ruffle/ruffle.js"></script> <!--server (remove line, cannot have emulator on infinityfree) -->
         @else
-        <div class="game">
-        <!-- <iframe src="{{$game->url}}" width="960" height="600"  scrolling="none" frameborder="0"></iframe> -->
-        <iframe src="{{$game->url}}" width="960" height="700"  scrolling="none" frameborder="0"></iframe>
-        </div>
+            <div class="game" style="margin-top:-30px;">
+                <iframe src="{{$game->url}}" width="960" height="700"  scrolling="none" frameborder="0"></iframe>
+            </div>
         @endif
     </div>
 

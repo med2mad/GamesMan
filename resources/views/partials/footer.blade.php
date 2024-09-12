@@ -65,7 +65,7 @@
 					</svg>
 				</div>
 
-
+			</div>
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
