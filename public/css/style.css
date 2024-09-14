@@ -639,10 +639,12 @@ a {
         background: #3b5d50;
         color: #ffffff; }
   .footer-section .border-top {
-    border-color: #dce5e4; }
+    border-color: #818181 !important; }
     .footer-section .border-top.copyright {
       font-size: 14px !important; }
-
+    .copyright a:hover
+    { text-decoration: underline; }
+      
 .untree_co-section {
   padding: 1rem 0 0 0; }
 
@@ -785,9 +787,9 @@ textarea {
     .wave2 {
       position: absolute;
       bottom: 0;
-      left: -255px;
+      left: -700px;
       right: 0;
-      width: 132%;
+      width: 160%;
       line-height: 0;
       transform: rotate(180deg);
       z-index: -1;
