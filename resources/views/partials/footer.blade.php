@@ -8,8 +8,9 @@
 						<ul class="list-unstyled custom-social">
 							<li><a href="#"><span class="fa fa-brands fa-github"></span></a></li>
 							<li><a href="#"><span class="fa-solid fa-envelope"></span></a></li>
-							<li><a href="#"><span class="fa fa-solid fa-play"></span></a></li>
+							<li><a href="#"><span class="fa-solid fa-globe"></span></a></li>
 							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+						</ul>
 					</div>
 
 					<div class="col-lg-8">
@@ -60,7 +61,7 @@
 			<div class="border-top copyright">
 				<div class="row">
 					<div class="col-lg-6">
-						<p class="text-center text-lg-start">Created by <a href="https://untree.co" style="color:#daac3a !important;">c-triangle</a> 2024.</p>
+						<p class="text-center text-lg-start">Created by <a href="https://untree.co" style="color:#daac3a !important;">Mohamed LEGHDAICH</a> 2024.</p>
 					</div>
 
 					<div class="col-lg-6 text-center text-lg-end">

@@ -1,4 +1,4 @@
-@include( 'partials.nav' )
+@include( 'partials.header' )
 @include( 'partials.hero' )
 
 		<!-- Start Product Section -->
