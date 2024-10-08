@@ -93,6 +93,7 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", (event) => {
+		document.querySelector("ul.pagination").style.flexWrap="wrap"
 		document.querySelector("li.page-item.active > span").style.backgroundColor="gray"
 		document.querySelector("li.page-item.active > span").style.borderColor="gray"
 		document.querySelector("li.page-item.disabled > span").style.backgroundColor="gray"
