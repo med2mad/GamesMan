@@ -26,7 +26,7 @@
     <div class="block">
       <div class="row justify-content-center">
 
-        <div class="col-md-8 col-lg-8 pb-4">
+        <div class="col-md-9 col-lg-9 pb-4">
 
           <div class="row mb-5">
 
@@ -38,12 +38,12 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                  <p>Lot SIDI ABDERRAHMANE Rue 31 Nr 61 OULFA CASABLANCA</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
                 <div class="service-icon color-1 mb-4">
                   <svg width="25" height="25" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
@@ -59,7 +59,7 @@
               </div> <!-- /.service -->
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-5">
               <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
                 <div class="service-icon color-1 mb-4">
                   <svg fill="currentColor" width="25" height="25" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -84,25 +84,12 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>Portfolio website</p>
+                  <p>Profile website</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
 
-            <div class="col-lg-4">
-              <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                <div class="service-icon color-1 mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                  </svg>
-                </div> <!-- /.icon -->
-                <div class="service-contents">
-                  <p>info@yourdomain.com</p>
-                </div> <!-- /.service-contents-->
-              </div> <!-- /.service -->
-            </div>
-
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
                 <div class="service-icon color-1 mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
@@ -110,10 +97,26 @@
                   </svg>
                 </div> <!-- /.icon -->
                 <div class="service-contents">
-                  <p>+1 294 3925 3939</p>
+                  <p>06 44 63 86 60</p>
                 </div> <!-- /.service-contents-->
               </div> <!-- /.service -->
             </div>
+
+
+
+          <div class="col-lg-5">
+            <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
+              <div class="service-icon color-1 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                </svg>
+              </div> <!-- /.icon -->
+              <div class="service-contents">
+                <p>mohamed.leghdaich@gmail.com</p>
+              </div> <!-- /.service-contents-->
+            </div> <!-- /.service -->
+          </div>
+
           </div>
 
 
@@ -121,7 +124,7 @@
           <div class="">
             <h2 class="mb-4 section-title">About Me</h2>
             <p>
-              "Mohamed Leghdaich", a programmer and web designed. Builder of the "GamesMan" platform with the goal to contribute to the gaming comunity
+              "Mohamed Leghdaich", a programmer and web designed. Builder of the "GamesMan" website with the goal to contribute to the gaming comunity
               and to the move of preserving web content that becomes obsolete by the evolution of the internet (especialy old games). <br>
               If interested in my web developpement services, or for collaboration, or just to hang out and have a chat, please leave a message.
             </p>

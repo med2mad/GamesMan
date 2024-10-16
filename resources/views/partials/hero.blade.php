@@ -49,4 +49,22 @@
 			</div>
 		</div>
 
+		<script src="/js/splide.min.js"></script>
+		<script src="/js/splide-extension-auto-scroll.min.js"></script>
+	
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var splide = new Splide('.splide', {
+					height:'200px',
+					fixedWidth:'300px',
+					gap:'150px',
+					type:'loop',
+					arrows:false,
+					autoScroll:{speed:1.5, autoStart:true},
+				});
+				
+				splide.mount(window.splide.Extensions);
+			});
+		</script>
+	
 		<!-- End Hero Section -->

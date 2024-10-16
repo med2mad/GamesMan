@@ -86,7 +86,7 @@
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-lg-6 div1">
-						<h2 class="section-title">Game file sharing platform</h2>
+						<h2 class="section-title">A game file sharing platform</h2>
 						
 						<div class="row my-5">
 							<div class="col-6 col-md-6">
@@ -95,7 +95,7 @@
 										<img src="/images/home/controller.png" alt="Image" class="imf-fluid">
 									</div>
 									<h3>Start a game !</h3>
-									<p>Play games picked from a variety of platforms, or made and shared here using game-engines, converters, decompilers or other tools.</p>
+									<p>Play games picked from a variety of websites, or made and shared here using game-engines, converters, decompilers or other tools.</p>
 								</div>
 							</div>
 
@@ -138,14 +138,14 @@
 						<h2 class="section-title mb-4">Our Advantages</h2>
 						<p>
 							We pick games that meet today's expectations from multiple websites/archives
-							so you won't have to search platforms that can even mix media types (animations/images/audio/...).<br>
+							so you won't have to search websites that can even mix media types (animations/images/audio/...).<br>
 							To go use the websites yourself, links are down below.
 						</p>
 						<p style="margin-bottom: 0;">
 							<u>More advantages :</u>
 						</p>
 						<ul class="list-unstyled custom-list mb-4 mt-0">
-							<li>Our platform is family friendly</li>
+							<li>The website is family friendly</li>
 							<li>All game genres are available</li>
 							<li>Add a game you cross<br>to always find it here</li>
 							<li>You can find here a lost internet game</li>

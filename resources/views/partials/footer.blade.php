@@ -66,8 +66,7 @@
 
 					<div class="col-lg-6 text-center text-lg-end">
 						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4"><a href="#" style="color:#daac3a !important;">Terms &amp; Conditions</a></li>
-							<li><a href="#" style="color:#daac3a !important;">Contact Us</a></li>
+							<li><a href="/page/contact" style="color:#daac3a !important;">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>
@@ -82,10 +81,6 @@
 					</svg>
 				</div>
 
-			
-
-
-
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
@@ -95,24 +90,6 @@
 		<script src="/js/tiny-slider.js"></script>
 		<script src="/js/custom.js"></script>
 
-		<script src="/js/splide.min.js"></script>
-		<script src="/js/splide-extension-auto-scroll.min.js"></script>
-	
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				var splide = new Splide('.splide', {
-					height:'200px',
-					fixedWidth:'300px',
-					gap:'150px',
-					type:'loop',
-					arrows:false,
-					autoScroll:{speed:1.5, autoStart:true},
-				});
-				
-				splide.mount(window.splide.Extensions);
-			});
-		</script>
-	
 	</body>
 
 </html>
