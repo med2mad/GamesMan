@@ -24,8 +24,8 @@
 							>
 							<h3 class="product-title">Flipper Cube</h3>
 							<p class="product-price">
-								Genre : puzzle<br>
-								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+								Popularity : <img src="/images/stars/5.png" style="width:100px;"><br>
+								Genre : puzzle
 							</p>
 							<span class="icon-cross">
 								<img src="/images/controller.svg" class="img-fluid">
@@ -45,8 +45,8 @@
 							>
 							<h3 class="product-title">Run</h3>
 							<p class="product-price">
-								Genre : runner<br>
-								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+								Popularity : <img src="/images/stars/5.png" style="width:100px;"><br>
+								Genre : runner
 							</p>
 							<span class="icon-cross">
 								<img src="/images/controller.svg" class="img-fluid">
@@ -66,8 +66,8 @@
 							>
 							<h3 class="product-title">Bloxorz</h3>
 							<p class="product-price">
-								Genre : puzzle<br>
-								Popularity : <img src="/images/stars/5.png" style="width:100px;">
+								Popularity : <img src="/images/stars/5.png" style="width:100px;"><br>
+								Genre : puzzle
 							</p>
 							<span class="icon-cross">
 								<img src="/images/controller.svg" class="img-fluid">
