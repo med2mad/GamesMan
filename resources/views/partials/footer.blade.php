@@ -6,10 +6,10 @@
 				<div class="row g-5">
 					<div class="col-lg-4">
 						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-github"></span></a></li>
-							<li><a href="#"><span class="fa-solid fa-envelope"></span></a></li>
-							<li><a href="#"><span class="fa-solid fa-globe"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+							<li><a href="https://www.linkedin.com/in/webdesigner-leghdaich/" target="_blank"><span class="fa fa-brands fa-linkedin"></span></a></li>
+							<li><a href="https://med2mad.github.io/Portfolio/index-fr.html" target="_blank"><span class="fa-solid fa-globe"></span></a></li>
+							<li><a href="https://github.com/med2mad" target="_blank"><span class="fa fa-brands fa-github"></span></a></li>
+							<li><a href="/page/contact"><span class="fa-solid fa-envelope"></span></a></li>
 						</ul>
 					</div>
 

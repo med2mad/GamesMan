@@ -44,7 +44,9 @@ a {
     text-decoration: none; }
   a.more {
     font-weight: 600; }
-
+.service-contents p{
+  text-decoration: none !important;
+}
 .custom-navbar {
   background: #3b5d50 !important;
   padding-top: 10px;
