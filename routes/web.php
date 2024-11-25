@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Game;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
     return view('index', ['page'=>'index']);
@@ -63,4 +66,38 @@ Route::post('/', function (Request $request) {
     ]);
 
     return view('add', ['page'=>'add', "success"=>'success']);
+});
+
+Route::post('/signup', function (Request $request) {
+    $request->validate([
+        'name' => 'required|unique:users|min:5|max:10',
+        'password' => 'required|min:5|max:10|confirmed',
+        'email' =>  'required|email|unique:users',
+    ]);
+    User::create([
+        'name' => $request->input('name'),
+        'password' => Hash::make($request->input('password')),
+        'email' => $request->input('email')
+    ]);
+    return view('index', ['page'=>'index']);
+});
+Route::post('/login', function (Request $request) {
+    $request->validate([
+        'name' => 'required|min:5|max:10',
+        'password' => 'required|min:5|max:10',
+    ]);
+
+    if(Auth::attempt( ["password"=>$request->input('password') , "name"=>$request->input('name')] )){
+        $request->session()->regenerate();
+        return view('index', ['page'=>'index']);
+    }
+    else{
+        return back()
+                ->withErrors(['password' => 'Provided credentials do not match.']) //create @error('password')
+                ->withInput(); //repopulates form excepy "password"
+    }
+});
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('index', ['page'=>'index']);
 });

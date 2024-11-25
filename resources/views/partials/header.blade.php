@@ -47,6 +47,19 @@
 						<li class="{{$page=='contact'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/contact">Contact me</a>
 						</li>
+						@guest
+							<li class="{{$page=='signup'?'nav-item active':''}}">
+								<a class="nav-link" href="/page/signup">Signup</a>
+							</li>
+							<li class="{{$page=='login'?'nav-item active':''}}">
+								<a class="nav-link" href="/page/login">Login</a>
+							</li>
+						@endguest
+						@auth
+							<li>
+								<a class="nav-link" href="/logout">Logout</a>
+							</li>
+						@endauth
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
