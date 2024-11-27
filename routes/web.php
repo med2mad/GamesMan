@@ -49,14 +49,14 @@ Route::post('/', function (Request $request) {
     if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
         $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
         $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
-        $request->file('thumbnail')->move(public_path('images/thumbnails'), $thumbnail);
+        $request->file('thumbnail')->move(public_path('/images/thumbnails'), $thumbnail);
     }
 
     $screenshot = 'none.jpg';
     if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
         $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
         $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
-        $request->file('screenshot')->move(public_path('images/screenshots'), $screenshot);
+        $request->file('screenshot')->move(public_path('/images/screenshots'), $screenshot);
     }
 
     $data = Game::create([
@@ -74,11 +74,23 @@ Route::post('/signup', function (Request $request) {
         'password' => 'required|min:5|max:10|confirmed',
         'email' =>  'required|email|unique:users',
     ]);
+    
+    $fileName = 'none.jpg';
+    if($request->hasFile('photo') and $request->file('photo')->isValid()) {
+        $request->validate(['photo' => 'file|mimes:jpg,png,jpeg,gif,svg']);
+        $fileName = time().'_'.$request->file('photo')->getClientOriginalName();
+        $request->file('photo')->move(public_path('images/users'), $fileName);
+    }
+
     User::create([
         'name' => $request->input('name'),
         'password' => Hash::make($request->input('password')),
-        'email' => $request->input('email')
+        'email' => $request->input('email'),
+        'photo' => $fileName,
     ]);
+    return view('index', ['page'=>'index']);
+});
+Route::get('/login', function (Request $request) {
     return view('index', ['page'=>'index']);
 });
 Route::post('/login', function (Request $request) {
@@ -88,16 +100,17 @@ Route::post('/login', function (Request $request) {
     ]);
 
     if(Auth::attempt( ["password"=>$request->input('password') , "name"=>$request->input('name')] )){
-        $request->session()->regenerate();
         return view('index', ['page'=>'index']);
     }
     else{
         return back()
-                ->withErrors(['password' => 'Provided credentials do not match.']) //create @error('password')
+                ->withErrors(['password' => 'Provided credentials do not match.']) //@error('password')
                 ->withInput(); //repopulates form excepy "password"
     }
 });
-Route::get('/logout', function () {
+Route::get('/logout', function (Request $request) {
     Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
     return view('index', ['page'=>'index']);
 });

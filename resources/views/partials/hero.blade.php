@@ -6,7 +6,7 @@
 					<div class="col-lg-5">
 						<div class="intro-excerpt">
 							<img src="/images/logo-hero.png" alt="" class="mb-1">
-							<p><a href="/page/games" class="btn btn-secondary me-2">All Games</a><a href="/page/contact" class="btn btn-white-outline">Contact Me</a></p>
+							<p><a href="/page/games" class="btn btn-secondary me-2">All Games</a><a href="/page/signup" class="btn btn-white-outline">Sign Up</a></p>
 						</div>
 					</div>
 					<div class="col-lg-7">

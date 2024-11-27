@@ -893,3 +893,10 @@ fieldset legend div{
   max-width: 380px; 
   transform: scale(50%) rotateZ(40deg);
 }
+
+.photo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border:solid 2px rgb(185, 185, 185);
+}

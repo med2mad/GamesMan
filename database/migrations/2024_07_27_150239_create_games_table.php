@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('popularity')->default(1);
             $table->string('genre')->nullable();
             $table->text('instructions')->nullable();
+            $table->foreignId('userId')->constrained('users')->nullable()->default(null)->nullOnDelete();
             $table->timestamps();
         });
     }

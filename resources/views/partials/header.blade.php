@@ -8,15 +8,13 @@
 	<link rel="shortcut icon" href="/controller.svg">
 
   	<meta name="description" content="" />
-  	<meta name="keywords" content="bootstrap, bootstrap4" />
-
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/css/tiny-slider.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/splide.min.css" rel="stylesheet">
 
-	<!--server(cannot have emulator in infinityfree.com) <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script> --> 
+	<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script>
 
 	<title>GamesMan</title>
 </head>
@@ -41,9 +39,11 @@
 						<li class="{{$page=='games'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/games">Games</a>
 						</li>
+						@auth
 						<li class="{{$page=='add'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/add">Add game</a>
 						</li>
+						@endauth
 						<li class="{{$page=='contact'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/contact">Contact me</a>
 						</li>
@@ -59,6 +59,9 @@
 							<li>
 								<a class="nav-link" href="/logout">Logout</a>
 							</li>
+							<!-- <li>
+								<img src="/images/users/{{auth()->user()->photo}}" class="photo">
+							</li> -->
 						@endauth
 					</ul>
 

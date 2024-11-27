@@ -61,7 +61,7 @@
 			<div class="border-top copyright">
 				<div class="row">
 					<div class="col-lg-6">
-						<p class="text-center text-lg-start">Created by <a href="https://untree.co" style="color:#daac3a !important;">Mohamed LEGHDAICH</a> 2024.</p>
+						<p class="text-center text-lg-start">Created by <a href="https://med2mad.github.io/Portfolio/index-en.html" target="_blank" style="color:#daac3a !important;">Mohamed LEGHDAICH</a> 2024.</p>
 					</div>
 
 					<div class="col-lg-6 text-center text-lg-end">
