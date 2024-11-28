@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(1);
-            $table->string('genre')->nullable();
+            $table->string('genre1')->nullable();
+            $table->string('genre2')->nullable();
             $table->text('instructions')->nullable();
             $table->foreignId('userId')->constrained('users')->nullable()->default(null)->nullOnDelete();
             $table->timestamps();

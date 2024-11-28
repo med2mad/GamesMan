@@ -60,7 +60,7 @@
 					gap:'150px',
 					type:'loop',
 					arrows:false,
-					autoScroll:{speed:1.5, autoStart:true},
+					autoScroll:{speed:1.5, pauseOnHover: false, autoStart:true},
 				});
 				
 				splide.mount(window.splide.Extensions);

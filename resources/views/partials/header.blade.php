@@ -13,8 +13,9 @@
 	<link href="/css/tiny-slider.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/splide.min.css" rel="stylesheet">
+	<link href="/css/datatables.min.css" rel="stylesheet">
 
-	<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script>
+	<!--server(cannot have emulator in infinityfree.com)<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.js"></script> -->
 
 	<title>GamesMan</title>
 </head>
@@ -40,8 +41,8 @@
 							<a class="nav-link" href="/page/games">Games</a>
 						</li>
 						@auth
-						<li class="{{$page=='add'?'nav-item active':''}}">
-							<a class="nav-link" href="/page/add">Add game</a>
+						<li class="{{$page=='dashboard'||$page=='add'?'nav-item active':''}}">
+							<a class="nav-link" href="/page/dashboard?userId={{auth()->user()->id}}">Dashboard</a>
 						</li>
 						@endauth
 						<li class="{{$page=='contact'?'nav-item active':''}}">

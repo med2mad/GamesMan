@@ -900,3 +900,9 @@ fieldset legend div{
   border-radius: 50%;
   border:solid 2px rgb(185, 185, 185);
 }
+
+.dashboard img{
+  width: 100px;
+  height: 100px;
+
+}

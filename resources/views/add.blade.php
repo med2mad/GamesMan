@@ -19,12 +19,12 @@
             @endisset
           </div>
 
-          <form action="/" method="post" enctype="multipart/form-data" id="myform">
+          <form action="/{{$route}}" method="post" enctype="multipart/form-data" id="myform">
             @csrf
             
             <div class="form-group">
               <label class="text-black" for="title">Game Title (*)</label>
-              <input name="title" type="text" class="form-control" id="title" required />
+              <input name="title" value="{{old('title')}}" type="text" class="form-control" id="title" required maxlength="255" />
             </div>
             @error('title')
               <div class="text-danger">{{ $message }}</div>
@@ -43,7 +43,7 @@
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="url">Url    (if no file)   </label>
-                  <input name="url" type="text" class="form-control" id="url" />
+                  <input name="url" value="{{old('url')}}" type="text" class="form-control" id="url" maxlength="255" />
                 </div>
               </div>
               @error('url')
@@ -85,9 +85,25 @@
             </div>
 
             <div class="form-group mt-2">
-              <label class="text-black" for="genre">Genre</label>
-              <input name="genre" type="text" class="form-control" id="genre" />
+              
             </div>
+
+            
+            <div class="row mt-2">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="genre1">Genre 1</label>
+                  <x-genres genre="genre1"></x-genres>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="text-black" for="genre2">Genre 2</label>
+                  <x-genres genre="genre2"></x-genres>
+                </div>
+              </div>
+            </div>
+
 
             <div class="form-group mt-3">
               <label class="text-black" for="instructions">Instructions</label>

@@ -18,7 +18,7 @@
 							<select name="sortby" id="sortby" class="form-control">
 								<option value="popularity" {{$sortby=='popularity'?'selected':''}}>Popularity</option>
 								<option value="title" {{$sortby=='title'?'selected':''}}>Title</option>
-								<option value="genre" {{$sortby=='genre'?'selected':''}}>Genre</option>
+								<option value="genre1" {{$sortby=='genre1'?'selected':''}}>Genre</option>
 							</select>
 						</div>
 						<div class="col-4 p-0">
@@ -56,11 +56,12 @@
 							onmouseout="this.src='/images/thumbnails/{{$game->thumbnail}}'"
 							src="/images/thumbnails/{{$game->thumbnail}}"
 							class="img-fluid product-thumbnail"
+							alt="{{$game->thumbnail}}"
 						>
 						<h3 class="product-title">{{$game->title}}</h3>
 						<p class="product-price">
 							Popularity : <img src="/images/stars/{{$game->popularity}}.png" style="width:100px;"><br>
-							Genre : {{$game->genre}}
+							Genre : {{$game->genre1}} @isset($game->genre2) - {{$game->genre2}} @endisset
 						</p>
 						<span class="icon-cross">
 							<img src="/images/controller.svg" class="img-fluid">
