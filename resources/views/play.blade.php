@@ -32,7 +32,9 @@
         <h2 class="mb-2 section-title">{{$game->title}}</h2>
 
         <h3 style="text-decoration:underline; margin-bottom:0;">Genre :</h3>
-        <p class="mb-4" style="margin-left:10px;">{{$game->genre}}</p>
+        <p class="mb-4" style="margin-left:10px;">
+            {{$game->genre1}} @isset($game->genre2) - {{$game->genre2}} @endisset
+        </p>
 
         <h3 style="text-decoration:underline; margin-bottom:0;">Popularity :</h3>
         <p class="mb-4"><img src="/images/stars/{{$game->popularity}}.png" style="width:100px;"> </p>

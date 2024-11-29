@@ -904,5 +904,8 @@ fieldset legend div{
 .dashboard img{
   width: 100px;
   height: 100px;
+}
 
+.dt-input{
+  margin-right: 10px;
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('screenshot')->default('none.jpg');
             $table->boolean('valid')->default(false);
             $table->integer('popularity')->default(1);
+            $table->integer('played')->default(0);
             $table->string('genre1')->nullable();
             $table->string('genre2')->nullable();
             $table->text('instructions')->nullable();

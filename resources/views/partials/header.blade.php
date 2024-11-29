@@ -41,7 +41,7 @@
 							<a class="nav-link" href="/page/games">Games</a>
 						</li>
 						@auth
-						<li class="{{$page=='dashboard'||$page=='add'?'nav-item active':''}}">
+						<li class="{{$page=='dashboard'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/dashboard?userId={{auth()->user()->id}}">Dashboard</a>
 						</li>
 						@endauth
@@ -60,9 +60,9 @@
 							<li>
 								<a class="nav-link" href="/logout">Logout</a>
 							</li>
-							<!-- <li>
+							<li>
 								<img src="/images/users/{{auth()->user()->photo}}" class="photo">
-							</li> -->
+							</li>
 						@endauth
 					</ul>
 

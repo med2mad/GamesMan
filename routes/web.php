@@ -13,8 +13,8 @@ Route::get('/', function () {
 });
 
 Route::get('/play/{id}', function ($id) {
-    $data = Game::where('id', $id)->get();
-    return view('play', ['page'=>'play', 'game'=>$data[0]]);
+    $game = tap(Game::find($id))->increment('played');
+    return view('play', ['page'=>'play', 'game'=>$game]);
 });
 
 Route::get('/page/games', function (Request $request) {
@@ -24,22 +24,22 @@ Route::get('/page/games', function (Request $request) {
     $order = $request->input('order');
     $order = $order?$order:'desc';
 
-    $paginator = Game::where('title', 'like', '%'.$title.'%')->where('valid', true)
+    $paginator = Game::where('title', 'like', '%'.$title.'%')
                         ->orderBy($sortby, $order)->orderBy('id', 'asc')->paginate(20);
     return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 
 Route::get('/page/dashboard', function (Request $request) {
-    $data = Game::where('userId', $request->input('userId'))->get();
-    return view('dashboard', ["data"=>$data, 'page'=>'dashboard']);
+    $games = Game::where('userId', Auth::user()->id)->get();
+    return view('dashboard', ["games"=>$games, 'page'=>'dashboard']);
 });
 
 Route::get('/page/add', function () {
-    return view('add', ['route'=>'add']);
+    return view('add', ["route"=>'/add', 'page'=>'add']);
 });
 Route::get('/page/edit', function (Request $request) {
-    $data = Game::get($request->input('id'));
-    return view('add', ["data"=>$data, 'route'=>'edit']);
+    $game = Game::find($request->query('id'));
+    return view('add', ['route'=>'/edit?id='.$request->query('id'), "game"=>$game, 'page'=>'edit']);
 });
 
 Route::get('/page/{page}', function ($page) {
@@ -76,10 +76,10 @@ Route::post('/add', function (Request $request) {
         'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'),
         'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
         'screenshot'=>$screenshot, 'thumbnail'=>$thumbnail, 
-        'instructions'=>$request->input('instructions'),
+        'instructions'=>$request->input('instructions'), 'userId'=>Auth::user()->id,
     ]);
 
-    return view('add', ['page'=>'add', "success"=>'success']);
+    return redirect('/page/dashboard');
 });
 
 Route::post('/edit', function (Request $request) {
@@ -87,35 +87,36 @@ Route::post('/edit', function (Request $request) {
     $request->validate(['url' => 'required_without:file|max:255']);
     $request->validate(['file' => 'file|mimes:swf|required_without:url']);
     
-    $gamefile = '';
+    $values = [
+        'title'=>$request->input('title'), 'url'=>$request->input('url'),
+        'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
+        'instructions'=>$request->input('instructions'),
+    ];
+
     if($request->hasFile('file') and $request->file('file')->isValid()) {
         $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
+        $values['file']=$gamefile;
     }
 
-    $thumbnail = 'none.jpg';
     if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
         $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
         $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
         $request->file('thumbnail')->move(public_path('/images/thumbnails'), $thumbnail);
+        $values['thumbnail']=$thumbnail;
     }
 
-    $screenshot = 'none.jpg';
     if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
         $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
         $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
         $request->file('screenshot')->move(public_path('/images/screenshots'), $screenshot);
+        $values['screenshot']=$screenshot;
     }
 
-    User::where('id', $request->query('id'))->update([
-        'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'),
-        'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
-        'screenshot'=>$screenshot, 'thumbnail'=>$thumbnail, 
-        'instructions'=>$request->input('instructions'),
-    ]);
+    Game::find($request->query('id'))->update($values);
 
-    return view('add', ['page'=>'add', "success"=>'success']);
+    return redirect('/page/dashboard');
 });
 
 Route::post('/signup', function (Request $request) {
