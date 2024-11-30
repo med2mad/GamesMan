@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Models\Game;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -30,16 +29,16 @@ Route::get('/page/games', function (Request $request) {
 });
 
 Route::get('/page/dashboard', function (Request $request) {
-    $games = Game::where('userId', Auth::user()->id)->get();
+    $games = Game::where('userId', Auth::user()->id)->orderBy('id', 'desc')->get();
     return view('dashboard', ["games"=>$games, 'page'=>'dashboard']);
 });
 
 Route::get('/page/add', function () {
     return view('add', ["route"=>'/add', 'page'=>'add']);
 });
-Route::get('/page/edit', function (Request $request) {
-    $game = Game::find($request->query('id'));
-    return view('add', ['route'=>'/edit?id='.$request->query('id'), "game"=>$game, 'page'=>'edit']);
+Route::get('/page/edit/{id}', function (Request $request) {
+    $game = Game::find($request->id);
+    return view('add', ['route'=>'/edit/'.$request->id, "game"=>$game, 'page'=>'edit']);
 });
 
 Route::get('/page/{page}', function ($page) {
@@ -82,10 +81,9 @@ Route::post('/add', function (Request $request) {
     return redirect('/page/dashboard');
 });
 
-Route::post('/edit', function (Request $request) {
+Route::post('/edit/{id}', function (Request $request) {
     $request->validate(['title' => 'required|max:255']);
     $request->validate(['url' => 'required_without:file|max:255']);
-    $request->validate(['file' => 'file|mimes:swf|required_without:url']);
     
     $values = [
         'title'=>$request->input('title'), 'url'=>$request->input('url'),
@@ -94,6 +92,7 @@ Route::post('/edit', function (Request $request) {
     ];
 
     if($request->hasFile('file') and $request->file('file')->isValid()) {
+        $request->validate(['file' => 'file|mimes:swf']);
         $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
@@ -114,8 +113,15 @@ Route::post('/edit', function (Request $request) {
         $values['screenshot']=$screenshot;
     }
 
-    Game::find($request->query('id'))->update($values);
+    Game::find($request->id)->update($values);
 
+    return redirect('/page/dashboard');
+});
+
+Route::delete('/delete/{id}', function (Request $request) {
+    dd(Auth::id());
+    $game = Game::find($request->id);
+    Game::find($request->id)->delete();
     return redirect('/page/dashboard');
 });
 
@@ -151,7 +157,7 @@ Route::post('/login', function (Request $request) {
     ]);
 
     if(Auth::attempt( ["password"=>$request->input('password') , "name"=>$request->input('name')] )){
-        return view('index', ['page'=>'index']);
+        return redirect('/page/dashboard');
     }
     else{
         return back()

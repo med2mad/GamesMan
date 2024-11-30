@@ -1,23 +1,23 @@
 <select name="{{$genre}}" id="{{$genre}}" class="form-control">
-    <option value="" selected></option>
-    <option value="platformer">platformer</option>
-    <option value="shooter">shooter</option>
-    <option value="puzzle">puzzle</option>
-    <option value="runner">runner</option>
-    <option value="fighter">fighter</option>
-    <option value="racing">racing</option>
-    <option value="physics">physics</option>
-    <option value="space shooter">space shooter</option>
-    <option value="beat em up">beat em up</option>
-    <option value="launch">launch</option>
-    <option value="arcade">arcade</option>
-    <option value="survival">survival</option>
-    <option value="adventure">adventure</option>
-    <option value="rpg">rpg</option>
-    <option value="point and click">point and click</option>
-    <option value="simulation">simulation</option>
-    <option value="battle royale">battle royale</option>
-    <option value="strategy">strategy</option>
-    <option value="defense">defense</option>
-    <option value="explorer">explorer</option>
+    <option value="" {{$value===''?'selected':''}}></option>
+    <option value="adventure" {{$value==='adventure'?'selected':''}}>adventure</option>
+    <option value="arcade" {{$value==='arcade'?'selected':''}}>arcade</option>
+    <option value="battle royale" {{$value==='battle royale'?'selected':''}}>battle royale</option>
+    <option value="beat em up" {{$value==='beat em up'?'selected':''}}>beat em up</option>
+    <option value="defense" {{$value==='defense'?'selected':''}}>defense</option>
+    <option value="explorer" {{$value==='explorer'?'selected':''}}>explorer</option>
+    <option value="fighter" {{$value==='fighter'?'selected':''}}>fighter</option>
+    <option value="launch" {{$value==='launch'?'selected':''}}>launch</option>
+    <option value="physics" {{$value==='physics'?'selected':''}}>physics</option>
+    <option value="platformer" {{$value==='platformer'?'selected':''}}>platformer</option>
+    <option value="point and click" {{$value==='point and click'?'selected':''}}>point and click</option>
+    <option value="puzzle" {{$value==='puzzle'?'selected':''}}>puzzle</option>
+    <option value="racing" {{$value==='racing'?'selected':''}}>racing</option>
+    <option value="rpg" {{$value==='rpg'?'selected':''}}>rpg</option>
+    <option value="runner" {{$value==='runner'?'selected':''}}>runner</option>
+    <option value="shooter" {{$value==='shooter'?'selected':''}}>shooter</option>
+    <option value="simulation" {{$value==='simulation'?'selected':''}}>simulation</option>
+    <option value="space shooter" {{$value==='space shooter'?'selected':''}}>space shooter</option>
+    <option value="strategy" {{$value==='strategy'?'selected':''}}>strategy</option>
+    <option value="survival" {{$value==='survival'?'selected':''}}>survival</option>
 </select>

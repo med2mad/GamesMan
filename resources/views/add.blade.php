@@ -18,7 +18,7 @@
             
             <div class="form-group">
               <label class="text-black" for="title">Game Title (*)</label>
-              <input name="title" value="{{old('title', isset($game->title)?$game->title:'')}}" type="text" class="form-control" id="title" required maxlength="255" />
+              <input name="title" value="{{old('title', isset($game)?$game->title:'')}}" type="text" class="form-control" id="title" required maxlength="255" />
             </div>
             @error('title')
               <div class="text-danger">{{ $message }}</div>
@@ -37,7 +37,7 @@
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="url">Url (if no file *)</label>
-                  <input name="url" value="{{old('url', isset($game->url)?$game->url:'')}}" type="text" class="form-control" id="url" maxlength="255" />
+                  <input name="url" value="{{old('url', isset($game)?$game->url:'')}}" type="text" class="form-control" id="url" maxlength="255" />
                 </div>
               </div>
               @error('url')
@@ -56,7 +56,7 @@
                     </div>
                     <div>
                       <input name="thumbnail" type="file" class="form-control" id="thumbnail" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
-                      <label for="thumbnail"><img id="imgthumbnail" width="80" height="80" src="/images/thumbnails/{{isset($game->thumbnail)?$game->thumbnail:'none.jpg'}}" alt="game img"></label>
+                      <label for="thumbnail"><img id="imgthumbnail" width="80" height="80" src="/images/thumbnails/{{isset($game)?$game->thumbnail:'none.jpg'}}" alt="game img"></label>
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div>
                       <input name="screenshot" type="file" class="form-control" id="screenshot" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
-                      <label for="screenshot"><img id="imgscreenshot" width="80" height="80" src="/images/screenshots/{{isset($game->screenshot)?$game->screenshot:'none.jpg'}}" alt="game img"></label>
+                      <label for="screenshot"><img id="imgscreenshot" width="80" height="80" src="/images/screenshots/{{isset($game)?$game->screenshot:'none.jpg'}}" alt="game img"></label>
                     </div>
                   </div>
                 </div>
@@ -88,14 +88,14 @@
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="genre1">Genre 1</label>
-                  <x-genres genre="genre1" value="{{old('genre1', isset($game->genre1)?$game->genre1:'')}}"></x-genres>
+                  <x-genres genre="genre1" value="{{isset($game)?$game->genre1:''}}"></x-genres>
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="genre2">Genre 2</label>
-                  <x-genres genre="genre2" value=""></x-genres>
+                  <x-genres genre="genre2" value="{{isset($game)?$game->genre2:''}}"></x-genres>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
 
             <div class="form-group mt-3">
               <label class="text-black" for="instructions">Instructions</label>
-              <textarea name="instructions" class="form-control" id="instructions" cols="30" rows="5">{{ old('instructions', isset($game->instructions)?$game->instructions:'') }}</textarea>
+              <textarea name="instructions" class="form-control" id="instructions" cols="30" rows="5">{{ old('instructions', isset($game)?$game->instructions:'') }}</textarea>
             </div>
 
             

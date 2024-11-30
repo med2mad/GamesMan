@@ -4,38 +4,27 @@
 
 @php
 $genreColors = [
-	'platformer' => 'blue',
-	
-	'shooter' => 'navy',
-    'space shooter' => 'navy',
-
-    'defense' => 'lime',
-	'beat em up'=> 'lime',
-	
-    'puzzle' => 'yellow',
-    'strategy' => 'yellow',
-
-	'rpg' => 'silver',
-	'explorer' => 'silver',
-
-	'point and click' => 'pink',
-	'simulation' => 'pink',
-	
-    'physics' => 'aqua',
-    'launch' => 'aqua',
-
-	'arcade' => 'teal',
-	'runner' => 'teal',
-
-	'fighter' => 'maroon',
-	'battle royale' => 'maroon',
-	'survival' => 'maroon',
-
-	'racing' => 'black',
-
-	'adventure' => 'green',
-
 	'' => '',
+	'adventure' => 'green',
+	'arcade' => 'teal',
+	'battle royale' => 'darkgoldenrod',
+	'beat em up'=> 'mediumspringgreen',
+	'defense' => 'lime',
+	'explorer' => 'salmon',
+	'fighter' => 'maroon',
+	'launch' => 'aqua',
+	'physics' => 'cadetblue',
+	'platformer' => 'blue',
+	'point and click' => 'purple',
+	'puzzle' => 'yellow',
+	'racing' => 'black',
+	'rpg' => 'silver',
+	'runner' => 'turquoise',
+	'shooter' => 'navy',
+    'simulation' => 'pink',
+	'space shooter' => 'peru',
+    'strategy' => 'goldenrod',
+	'survival' => 'orange',
 ];
 @endphp
 
@@ -66,18 +55,18 @@ $genreColors = [
 								@php
 									$badgeClass1 = $genreColors[$game->genre1];
 								@endphp
-								<span style="border-radius:20px; font-size:larger; padding:5px 10px; color:white; background-color:{{$badgeClass1}};">{{$game->genre1}}</span>
+								<span style="border-radius:20px; font-size:larger; padding:5px 10px; color:white; background-color:{{$badgeClass1}};"><nobr>{{$game->genre1}}</nobr></span>
 							</td>
 							<td style="text-align:center;">
 								@php
 									$badgeClass2 = $genreColors[$game->genre2];
 								@endphp
-								<span style="border-radius:20px; font-size:larger; padding:5px 10px; color:white; background-color:{{$badgeClass2}};">{{$game->genre2}}</span>
+								<span style="border-radius:20px; font-size:larger; padding:5px 10px; color:white; background-color:{{$badgeClass2}};"> <nobr> {{$game->genre2}}</nobr></span>
 							</td>
-							<td style="text-align:center;">{{$game->created_at}}</td>
+							<td style="text-align:center;"><nobr>{{$game->created_at}}</nobr></td>
 							<td style="text-align:right;">
 								<a href="/page/edit?id={{$game->id}}" class="btn btn-primary" style="margin-bottom:5px; padding:5px 12px; width:100px;">Edit</a>
-								<form action="/delete" method="post"> @csrf <button type="submit" class="btn btn-danger" style="background-color:brown; padding:5px 12px; width:100px;">Delete</button></form>
+								<form action="/delete/{{$game->id}}" method="post"> @csrf @method('delete') <button type="submit" class="btn btn-danger" style="background-color:rgb(207, 53, 53); padding:5px 12px; width:100px;">Delete</button></form>
 							</td>
 						</tr>
 					@endforeach
@@ -93,9 +82,11 @@ $genreColors = [
 <script src="/js/jquery.js"></script>
 <script src="/js/datatables.min.js"></script>
 <script>
-    let table = new DataTable('#myTable', {
-        
-    });
+	document.addEventListener('DOMContentLoaded', ()=>{
+		let table = new DataTable('#myTable', {
+			info: false,
+		});
+	});
 </script>
 
 @include( 'partials.footer' )
