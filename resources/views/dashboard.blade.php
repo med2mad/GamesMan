@@ -65,7 +65,7 @@ $genreColors = [
 							</td>
 							<td style="text-align:center;"><nobr>{{$game->created_at}}</nobr></td>
 							<td style="text-align:right;">
-								<a href="/page/edit?id={{$game->id}}" class="btn btn-primary" style="margin-bottom:5px; padding:5px 12px; width:100px;">Edit</a>
+								<a href="/page/edit/{{$game->id}}" class="btn btn-primary" style="margin-bottom:5px; padding:5px 12px; width:100px;">Edit</a>
 								<form action="/delete/{{$game->id}}" method="post"> @csrf @method('delete') <button type="submit" class="btn btn-danger" style="background-color:rgb(207, 53, 53); padding:5px 12px; width:100px;">Delete</button></form>
 							</td>
 						</tr>

@@ -15,7 +15,7 @@
 
           <form action="{{$route}}" method="post" enctype="multipart/form-data" id="myform">
             @csrf
-            
+
             <div class="form-group">
               <label class="text-black" for="title">Game Title (*)</label>
               <input name="title" value="{{old('title', isset($game)?$game->title:'')}}" type="text" class="form-control" id="title" required maxlength="255" />
@@ -24,16 +24,27 @@
               <div class="text-danger">{{ $message }}</div>
             @enderror
 
+
             <div class="row mt-2">
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="file" accept=".swf">Game File (.swf *)</label>
-                  <input name="file" type="file" class="form-control" id="file" />
+                  <label class="text-black" for="filename" accept=".swf">Game File (.swf *)</label>
+                  <div style="display:flex;">
+                    <div class="input-group" onclick="document.getElementById('file').click();">
+                      <button type="button" class="btn btn-secondary"><span class="fa fa-file"></span></button>
+                      <input type="text" name="filename" value="{{isset($game)?Str::after($game->file,'_').'.swf':''}}" readonly id="filename" class="form-control" style="background-color:white;">  
+                    </div>
+                    <div>
+                      <input name="file" type="file" id="file" style="display:none;" />
+                      <a class="btn" style="background-color:brown; border-radius:10px;" id="nofile"><i style="font-size:1.2rem" class="fa fa-times"></i></a>
+                    </div>
+                  </div>
                 </div>
               </div>
               @error('file')
                 <div class="text-danger">{{ $message }}</div>
               @enderror
+
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="url">Url (if no file *)</label>
@@ -45,6 +56,7 @@
               @enderror
             </div>
 
+
             <div class="row mt-3">
               <div class="col-6">
                 <div class="form-group">
@@ -52,10 +64,10 @@
                   <div style="display:flex; gap:10px; align-items:center; justify-content:center">
                     <div>
                       <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;" onclick="document.getElementById('thumbnail').click();"><i style="font-size:1.2rem" class="fa fa-image"></i></a> <br>
-                      <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;" id="nothumbnail"><i style="font-size:1.2rem" class="fa fa-times"></i></a>
+                      <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px; background-color:brown;" id="nothumbnail"><i style="font-size:1.2rem; color:white;" class="fa fa-times"></i></a>
                     </div>
                     <div>
-                      <input name="thumbnail" type="file" class="form-control" id="thumbnail" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
+                      <input name="thumbnail" type="file" id="thumbnail" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
                       <label for="thumbnail"><img id="imgthumbnail" width="80" height="80" src="/images/thumbnails/{{isset($game)?$game->thumbnail:'none.jpg'}}" alt="game img"></label>
                     </div>
                   </div>
@@ -64,11 +76,11 @@
 
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="screenshot">Screen Shot</label>
+                  <label class="text-black" for="screenshot">Screenshot</label>
                   <div style="display:flex; gap:10px; align-items:center; justify-content:center">
                     <div>
                       <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;" onclick="document.getElementById('screenshot').click();"><i style="font-size:1.2rem" class="fa fa-image"></i></a> <br>
-                      <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;" id="noscreenshot"><i style="font-size:1.2rem" class="fa fa-times"></i></a>
+                      <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px; background-color:brown;" id="noscreenshot"><i style="font-size:1.2rem; color:white;" class="fa fa-times"></i></a>
                     </div>
                     <div>
                       <input name="screenshot" type="file" class="form-control" id="screenshot" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
@@ -79,11 +91,7 @@
               </div>
             </div>
 
-            <div class="form-group mt-2">
-              
-            </div>
 
-            
             <div class="row mt-2">
               <div class="col-6">
                 <div class="form-group">
@@ -119,6 +127,19 @@
 <!-- End Contact Form -->
 
 <script type="text/javascript">
+    document.getElementById("file").onchange = function(event) {
+      const inputFile = event.target;
+      if (inputFile.files.length > 0) {
+        document.getElementById("filename").value = inputFile.files[0].name;
+      } else {
+        document.getElementById("filename").value = '';
+      }
+    }
+    document.getElementById("nofile").onclick=function() {
+        document.getElementById("file").value = null;
+        document.getElementById("filename").value = '';
+    }
+
     document.getElementById("thumbnail").onchange=function() {
         document.getElementById("imgthumbnail").setAttribute("src",URL.createObjectURL(document.getElementById("thumbnail").files[0]));
     }

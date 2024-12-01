@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\fileupload;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Game;
@@ -48,14 +49,10 @@ Route::get('/page/{page}', function ($page) {
 Route::post('/add', function (Request $request) {
     $request->validate(['title' => 'required|max:255']);
     $request->validate(['url' => 'required_without:file|max:255']);
-    $request->validate(['file' => 'file|mimes:swf|required_without:url']);
     
-    $gamefile = '';
-    if($request->hasFile('file') and $request->file('file')->isValid()) {
-        $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
-        $request->file('file')->move(public_path('games'), $gamefile);
-        $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
-    }
+    
+    
+    $gamefile = $request->attributes->get('gamefile');
 
     $thumbnail = 'none.jpg';
     if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
@@ -79,12 +76,14 @@ Route::post('/add', function (Request $request) {
     ]);
 
     return redirect('/page/dashboard');
-});
+
+})->middleware(fileupload::class);
 
 Route::post('/edit/{id}', function (Request $request) {
     $request->validate(['title' => 'required|max:255']);
     $request->validate(['url' => 'required_without:file|max:255']);
-    
+    $request->validate(['file' => 'file|mimes:swf|required_without_all:url,fliename']);
+
     $values = [
         'title'=>$request->input('title'), 'url'=>$request->input('url'),
         'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
@@ -92,7 +91,6 @@ Route::post('/edit/{id}', function (Request $request) {
     ];
 
     if($request->hasFile('file') and $request->file('file')->isValid()) {
-        $request->validate(['file' => 'file|mimes:swf']);
         $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
         $request->file('file')->move(public_path('games'), $gamefile);
         $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
@@ -161,7 +159,7 @@ Route::post('/login', function (Request $request) {
     }
     else{
         return back()
-                ->withErrors(['password' => 'Provided credentials do not match.']) //@error('password')
+                ->withErrors(['password' => 'Wrong name or password.']) //@error('password')
                 ->withInput(); //repopulates form excepy "password"
     }
 });
