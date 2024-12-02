@@ -32,7 +32,7 @@
                   <div style="display:flex;">
                     <div class="input-group" onclick="document.getElementById('file').click();">
                       <button type="button" class="btn btn-secondary"><span class="fa fa-file"></span></button>
-                      <input type="text" name="filename" value="{{isset($game)?Str::after($game->file,'_').'.swf':''}}" readonly id="filename" class="form-control" style="background-color:white;">  
+                      <input type="text" name="filename" value="{{isset($game->file)&&$game->file?$game->file:''}}" readonly id="filename" class="form-control" style="background-color:white;">  
                     </div>
                     <div>
                       <input name="file" type="file" id="file" style="display:none;" />
@@ -40,20 +40,21 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              @error('file')
+                @error('file')
                 <div class="text-danger">{{ $message }}</div>
-              @enderror
+                @enderror
+              </div>
+
 
               <div class="col-6">
                 <div class="form-group">
                   <label class="text-black" for="url">Url (if no file *)</label>
                   <input name="url" value="{{old('url', isset($game)?$game->url:'')}}" type="text" class="form-control" id="url" maxlength="255" />
                 </div>
+                @error('url')
+                  <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
-              @error('url')
-                <div class="text-danger">{{ $message }}</div>
-              @enderror
             </div>
 
 
@@ -68,10 +69,11 @@
                     </div>
                     <div>
                       <input name="thumbnail" type="file" id="thumbnail" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
-                      <label for="thumbnail"><img id="imgthumbnail" width="80" height="80" src="/images/thumbnails/{{isset($game)?$game->thumbnail:'none.jpg'}}" alt="game img"></label>
+                      <label for="thumbnail"><img id="thumbnailimg" width="80" height="80" src="/images/thumbnails/{{isset($game)?$game->thumbnail:'none.jpg'}}" alt="game img"></label>
                     </div>
                   </div>
                 </div>
+                <input type="hidden" name="thumbnailname" value="{{isset($game)?$game->thumbnail:'none.jpg'}}" id="thumbnailname">
               </div>
 
               <div class="col-6">
@@ -84,11 +86,12 @@
                     </div>
                     <div>
                       <input name="screenshot" type="file" class="form-control" id="screenshot" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
-                      <label for="screenshot"><img id="imgscreenshot" width="80" height="80" src="/images/screenshots/{{isset($game)?$game->screenshot:'none.jpg'}}" alt="game img"></label>
+                      <label for="screenshot"><img id="screenshotimg" width="80" height="80" src="/images/screenshots/{{isset($game)?$game->screenshot:'none.jpg'}}" alt="game img"></label>
                     </div>
                   </div>
                 </div>
               </div>
+              <input type="hidden" name="screenshotname" value="{{isset($game)?$game->screenshot:'none.jpg'}}" id="screenshotname">
             </div>
 
 
@@ -131,8 +134,6 @@
       const inputFile = event.target;
       if (inputFile.files.length > 0) {
         document.getElementById("filename").value = inputFile.files[0].name;
-      } else {
-        document.getElementById("filename").value = '';
       }
     }
     document.getElementById("nofile").onclick=function() {
@@ -141,19 +142,29 @@
     }
 
     document.getElementById("thumbnail").onchange=function() {
-        document.getElementById("imgthumbnail").setAttribute("src",URL.createObjectURL(document.getElementById("thumbnail").files[0]));
+      const inputFile = event.target;
+      if (inputFile.files.length > 0) {
+        document.getElementById("thumbnailimg").setAttribute("src",URL.createObjectURL(document.getElementById("thumbnail").files[0]));
+        document.getElementById("thumbnailname").value = inputFile.files[0].name;
+      }
     }
     document.getElementById("nothumbnail").onclick=function() {
         document.getElementById("thumbnail").value= null;
-        document.getElementById("imgthumbnail").setAttribute("src","/images/screenshots/none.jpg");
+        document.getElementById("thumbnailimg").setAttribute("src","/images/thumbnails/none.jpg");
+        document.getElementById("thumbnailname").value = 'none.jpg';
     }
 
     document.getElementById("screenshot").onchange=function() {
-        document.getElementById("imgscreenshot").setAttribute("src",URL.createObjectURL(document.getElementById("screenshot").files[0]));
+      const inputFile = event.target;
+      if (inputFile.files.length > 0) {
+        document.getElementById("screenshotimg").setAttribute("src",URL.createObjectURL(document.getElementById("screenshot").files[0]));
+        document.getElementById("screenshotname").value = inputFile.files[0].name;
+      }
     }
     document.getElementById("noscreenshot").onclick=function() {
         document.getElementById("screenshot").value= null;
-        document.getElementById("imgscreenshot").setAttribute("src","/images/screenshots/none.jpg");
+        document.getElementById("screenshotimg").setAttribute("src","/images/screenshots/none.jpg");
+        document.getElementById("screenshotname").value = 'none.jpg';
     }
 </script>
 

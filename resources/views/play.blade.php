@@ -15,7 +15,7 @@
                     const player = ruffle.createPlayer();
                     const container = document.getElementById("flash-game-container");
                     container.appendChild(player);
-                    player.load("/games/{{$game->file}}.swf");
+                    player.load("/games/{{$game->file}}");
                 });
             </script>
             <script src="/ruffle/ruffle.js"></script> <!--server (remove line, cannot have emulator on infinityfree) -->

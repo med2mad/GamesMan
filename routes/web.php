@@ -7,6 +7,7 @@ use App\Models\Game;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\save;
 
 Route::get('/', function () {
     return view('index', ['page'=>'index']);
@@ -46,74 +47,9 @@ Route::get('/page/{page}', function ($page) {
     return view($page, ['page'=>$page]);
 });
 
-Route::post('/add', function (Request $request) {
-    $request->validate(['title' => 'required|max:255']);
-    $request->validate(['url' => 'required_without:file|max:255']);
-    
-    
-    
-    $gamefile = $request->attributes->get('gamefile');
-
-    $thumbnail = 'none.jpg';
-    if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
-        $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
-        $request->file('thumbnail')->move(public_path('/images/thumbnails'), $thumbnail);
-    }
-
-    $screenshot = 'none.jpg';
-    if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
-        $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
-        $request->file('screenshot')->move(public_path('/images/screenshots'), $screenshot);
-    }
-
-    Game::create([
-        'title'=>$request->input('title'), 'file'=>$gamefile, 'url'=>$request->input('url'),
-        'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
-        'screenshot'=>$screenshot, 'thumbnail'=>$thumbnail, 
-        'instructions'=>$request->input('instructions'), 'userId'=>Auth::user()->id,
-    ]);
-
-    return redirect('/page/dashboard');
-
-})->middleware(fileupload::class);
-
-Route::post('/edit/{id}', function (Request $request) {
-    $request->validate(['title' => 'required|max:255']);
-    $request->validate(['url' => 'required_without:file|max:255']);
-    $request->validate(['file' => 'file|mimes:swf|required_without_all:url,fliename']);
-
-    $values = [
-        'title'=>$request->input('title'), 'url'=>$request->input('url'),
-        'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
-        'instructions'=>$request->input('instructions'),
-    ];
-
-    if($request->hasFile('file') and $request->file('file')->isValid()) {
-        $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
-        $request->file('file')->move(public_path('games'), $gamefile);
-        $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
-        $values['file']=$gamefile;
-    }
-
-    if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
-        $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
-        $request->file('thumbnail')->move(public_path('/images/thumbnails'), $thumbnail);
-        $values['thumbnail']=$thumbnail;
-    }
-
-    if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
-        $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
-        $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
-        $request->file('screenshot')->move(public_path('/images/screenshots'), $screenshot);
-        $values['screenshot']=$screenshot;
-    }
-
-    Game::find($request->id)->update($values);
-
-    return redirect('/page/dashboard');
+Route::middleware([fileupload::class])->group(function () {
+    Route::post('/add', [save::class, 'save']);
+    Route::post('/edit/{id}', [save::class, 'save']);
 });
 
 Route::delete('/delete/{id}', function (Request $request) {
@@ -145,9 +81,7 @@ Route::post('/signup', function (Request $request) {
     ]);
     return view('index', ['page'=>'index']);
 });
-Route::get('/login', function (Request $request) {
-    return view('index', ['page'=>'index']);
-});
+
 Route::post('/login', function (Request $request) {
     $request->validate([
         'name' => 'required|min:5|max:10',

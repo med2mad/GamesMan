@@ -15,17 +15,34 @@ class fileupload
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $request->validate(['file' => 'file|mimes:swf|required_without_all:url,fliename'] , [ 'file.required_without_all' => 'Inter file or URL!']);
-
-        $gamefile = '';
-        if($request->hasFile('file') and $request->file('file')->isValid()) {
-            $gamefile = time().'_'.$request->file('file')->getClientOriginalName();
-            $request->file('file')->move(public_path('games'), $gamefile);
-            $gamefile = substr_replace($gamefile, '', strrpos($gamefile,'swf')-1, strlen('.swf'));
-        }
-
-        $request->attributes->set('gamefile',$gamefile);
+        $request->validate(['title' => 'required|max:255']);
+        $request->validate(['file' => 'file|mimes:swf|required_without_all:url,filename'] , ['file.required_without_all' => 'Inter file or URL!']);
+        $request->validate(['url' => 'required_without_all:file,filename|max:255'] , ['url.required_without_all' => 'Inter file or URL!']);
+        $request->validate(['thumbnail' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
+        $request->validate(['screenshot' => 'file|mimes:jpg,png,jpeg,gif,svg|max:4096']);
         
+        if($request->hasFile('file') and $request->file('file')->isValid()) {
+            $file = $request->file('file')->getClientOriginalName();
+            $file = substr_replace($file,'',strrpos($file,'.swf'),strlen('.swf')).'_'.time().'.swf';//time before extension
+            $request->file('file')->move(public_path('games'), $file);
+            $request->attributes->set('file', $file);
+        }
+        else{$request->attributes->set('file', $request->input('filename'));}
+
+        if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
+            $thumbnail = time().'_'.$request->file('thumbnail')->getClientOriginalName();
+            $request->file('thumbnail')->move(public_path('/images/thumbnails'), $thumbnail);
+            $request->attributes->set('thumbnail',$thumbnail);
+        }
+        else{ $request->attributes->set('thumbnail', $request->input('thumbnailname')); }
+
+        if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
+            $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
+            $request->file('screenshot')->move(public_path('/images/screenshots'), $screenshot);
+            $request->attributes->set('screenshot',$screenshot);
+        }
+        else{ $request->attributes->set('screenshot', $request->input('screenshotname')); }
+
         return $next($request);
     }
 }
