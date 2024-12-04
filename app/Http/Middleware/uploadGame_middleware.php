@@ -5,8 +5,10 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\Game;
+use Illuminate\Support\Facades\Auth;
 
-class fileupload
+class uploadGame_middleware
 {
     /**
      * Handle an incoming request.
@@ -15,6 +17,12 @@ class fileupload
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!Auth::check()) { abort(401); } //authentication
+        if ($request->gameId) {
+            $game = Game::find($request->gameId);
+            if ($game->userId != Auth::id()) { abort(403); } //authorization / permission
+        }
+
         $request->validate(['title' => 'required|max:255']);
         $request->validate(['file' => 'file|mimes:swf|required_without_all:url,filename'] , ['file.required_without_all' => 'Inter file or URL!']);
         $request->validate(['url' => 'required_without_all:file,filename|max:255'] , ['url.required_without_all' => 'Inter file or URL!']);

@@ -42,7 +42,7 @@
 						</li>
 						@auth
 						<li class="{{$page=='dashboard'?'nav-item active':''}}">
-							<a class="nav-link" href="/page/dashboard?userId={{auth()->user()->id}}">Dashboard</a>
+							<a class="nav-link" href="/page/dashboard">Dashboard</a>
 						</li>
 						@endauth
 						<li class="{{$page=='contact'?'nav-item active':''}}">

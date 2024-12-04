@@ -1,20 +1,20 @@
 <?php
 
-use App\Http\Middleware\fileupload;
+use App\Http\Middleware\uploadGame_middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\save;
+use App\Http\Controllers\saveGame_controller;
 
 Route::get('/', function () {
     return view('index', ['page'=>'index']);
 });
 
-Route::get('/play/{id}', function ($id) {
-    $game = tap(Game::find($id))->increment('played');
+Route::get('/play/{gameId}', function ($gameId) {
+    $game = tap(Game::find($gameId))->increment('played');
     return view('play', ['page'=>'play', 'game'=>$game]);
 });
 
@@ -30,32 +30,34 @@ Route::get('/page/games', function (Request $request) {
     return view('games', ["data"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 
-Route::get('/page/dashboard', function (Request $request) {
-    $games = Game::where('userId', Auth::user()->id)->orderBy('id', 'desc')->get();
+Route::get('/page/dashboard', function () {
+    $games = Game::where('userId', Auth::id())->orderBy('id', 'desc')->get();
     return view('dashboard', ["games"=>$games, 'page'=>'dashboard']);
 });
 
 Route::get('/page/add', function () {
     return view('add', ["route"=>'/add', 'page'=>'add']);
 });
-Route::get('/page/edit/{id}', function (Request $request) {
-    $game = Game::find($request->id);
-    return view('add', ['route'=>'/edit/'.$request->id, "game"=>$game, 'page'=>'edit']);
+Route::get('/page/edit/{gameId}', function (Request $request) {
+    $game = Game::find($request->gameId);
+    return view('add', ['route'=>'/edit/'.$request->gameId, "game"=>$game, 'page'=>'edit']);
 });
 
 Route::get('/page/{page}', function ($page) {
     return view($page, ['page'=>$page]);
 });
 
-Route::middleware([fileupload::class])->group(function () {
-    Route::post('/add', [save::class, 'save']);
-    Route::post('/edit/{id}', [save::class, 'save']);
+Route::middleware([uploadGame_middleware::class])->group(function () {
+    Route::post('/add', [saveGame_controller::class, 'save']);
+    Route::post('/edit/{gameId}', [saveGame_controller::class, 'save']);
 });
 
-Route::delete('/delete/{id}', function (Request $request) {
-    dd(Auth::id());
-    $game = Game::find($request->id);
-    Game::find($request->id)->delete();
+Route::delete('/delete/{gameId}', function ($gameId) {
+    $game = Game::find($gameId);
+    if (!Auth::check()) { abort(401); }
+    if ($game->userId != Auth::id()) { abort(403); }
+    
+    $game->delete();
     return redirect('/page/dashboard');
 });
 
@@ -97,6 +99,7 @@ Route::post('/login', function (Request $request) {
                 ->withInput(); //repopulates form excepy "password"
     }
 });
+
 Route::get('/logout', function (Request $request) {
     Auth::logout();
     $request->session()->invalidate();

@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use Illuminate\Support\Facades\Auth;
 
-class save extends Controller
+class saveGame_controller extends Controller
 {
-    function save(Request $request, $id=null) {
+    function save(Request $request) {
         $values = [
             'title'=>$request->input('title'), 'url'=>$request->input('url'),
             'genre1'=>$request->input('genre1'), 'genre2'=>$request->input('genre2'),
@@ -21,8 +21,9 @@ class save extends Controller
     
         $values['screenshot'] = $request->attributes->get('screenshot');
 
-        if ($id) {
-            Game::find($id)->update($values);
+        if ($request->id) {
+            $game = Game::find($request->id);
+            $game->update($values);
         }
         else {
             Game::create($values);
