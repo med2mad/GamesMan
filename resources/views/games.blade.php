@@ -36,7 +36,7 @@
 		</form>
 	</div>
 
-	{{ $data->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
+	{{ $games->appends(array('title'=>$title, 'sortby'=>$sortby, 'order'=>$order))->links('pagination::bootstrap-4') }}
 
 </div>
 </fieldset>
@@ -48,7 +48,7 @@
 	<div class="container">
 		<div class="row">
 
-			@foreach($data as $game)
+			@foreach($games as $game)
 				<div class="col-12 col-md-4 col-lg-3 mb-4">
 					<a class="product-item" href="/play/{{$game->id}}">
 						<img
@@ -61,7 +61,7 @@
 						<h3 class="product-title">{{$game->title}}</h3>
 						<p class="product-price">
 							Popularity : <img src="/images/stars/{{$game->popularity}}.png" style="width:100px;"><br>
-							Genre : {{$game->genre1}} @isset($game->genre2) - {{$game->genre2}} @endisset
+							Genre : {{$game->genre1}} @if($game->genre2) {{' - '.$game->genre2}} @endif
 						</p>
 						<span class="icon-cross">
 							<img src="/images/controller.svg" class="img-fluid">

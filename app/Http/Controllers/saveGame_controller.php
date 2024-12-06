@@ -21,9 +21,8 @@ class saveGame_controller extends Controller
     
         $values['screenshot'] = $request->attributes->get('screenshot');
 
-        if ($request->id) {
-            $game = Game::find($request->id);
-            $game->update($values);
+        if ($request->gameId) {
+            Game::where('id', $request->gameId)->update($values);
         }
         else {
             Game::create($values);

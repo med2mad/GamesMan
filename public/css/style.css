@@ -906,6 +906,32 @@ fieldset legend div{
   height: 100px;
 }
 
+#myTable th:nth-child(1),
+#myTable td:nth-child(1) {
+    max-width: 600px;
+    overflow: auto;
+}
+#myTable th:nth-child(2),
+#myTable td:nth-child(2) {
+    width: 10%; 
+}
+#myTable th:nth-child(3),
+#myTable td:nth-child(3) {
+    width: 10%; 
+}
+#myTable th:nth-child(4),
+#myTable td:nth-child(4) {
+    width: 20%; 
+}
+#myTable th:nth-child(5),
+#myTable td:nth-child(5) {
+    width: 10%; 
+}
+
 .dt-input{
   margin-right: 10px;
+}
+
+.product-item .product-title{
+  overflow: auto;
 }

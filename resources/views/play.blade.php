@@ -33,7 +33,7 @@
 
         <h3 style="text-decoration:underline; margin-bottom:0;">Genre :</h3>
         <p class="mb-4" style="margin-left:10px;">
-            {{$game->genre1}} @isset($game->genre2) - {{$game->genre2}} @endisset
+            {{$game->genre1}} @if($game->genre2) {{' - '.$game->genre2}} @endif
         </p>
 
         <h3 style="text-decoration:underline; margin-bottom:0;">Popularity :</h3>

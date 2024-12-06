@@ -34,6 +34,10 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+						@php
+							if(!isset($page)){$page='';}	
+						@endphp
+
 						<li class="{{$page=='index'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/index">Home</a>
 						</li>

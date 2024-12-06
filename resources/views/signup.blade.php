@@ -13,7 +13,7 @@
       <div class="row justify-content-center">
         <div class="col-md-8 col-lg-8 pb-4">
 
-          <form action="/signup" method="post" enctype="multipart/form-data" id="myform">
+          <form action="{{$route}}" method="post" enctype="multipart/form-data" id="myform">
             @csrf
             
             <div class="form-group">
@@ -62,7 +62,7 @@
               </div>
             </div>
 
-            <input type="submit" class="btn btn-primary-hover-outline mt-3" value="SignUp" />
+            <input type="submit" class="btn btn-primary-hover-outline mt-3" value="{{ isset($user) ? 'Update Game' : 'Add Game' }}" />
           </form>
 
         </div>
