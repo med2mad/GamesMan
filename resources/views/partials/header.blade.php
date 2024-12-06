@@ -38,14 +38,14 @@
 							if(!isset($page)){$page='';}	
 						@endphp
 
-						<li class="{{$page=='index'?'nav-item active':''}}">
+						<li style="margin-right:0;" class="{{$page=='index'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/index">Home</a>
 						</li>
-						<li class="{{$page=='games'?'nav-item active':''}}">
+						<li style="margin-right:0;" class="{{$page=='games'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/games">Games</a>
 						</li>
 						@auth
-						<li class="{{$page=='dashboard'?'nav-item active':''}}">
+						<li style="margin-right:0;" class="{{$page=='dashboard'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/dashboard">Dashboard</a>
 						</li>
 						@endauth
@@ -54,18 +54,19 @@
 						</li>
 						@guest
 							<li class="{{$page=='signup'?'nav-item active':''}}">
-								<a class="nav-link" href="/page/signup">Signup</a>
+								<a class="nav-link" href="/page/profile">Signup</a>
 							</li>
 							<li class="{{$page=='login'?'nav-item active':''}}">
 								<a class="nav-link" href="/page/login">Login</a>
 							</li>
 						@endguest
 						@auth
-							<li>
-								<a class="nav-link" href="/logout">Logout</a>
-							</li>
-							<li>
+							<li style="display:flex; margin-right:0;" class="{{$page=='editprofile'?'nav-item active':''}}">
 								<img src="/images/users/{{auth()->user()->photo}}" class="photo">
+								<a class="nav-link" href="/page/editprofile">Edit profile</a>
+							</li>
+							<li style="margin-left:5px;">
+								<a class="nav-link" href="/logout">Logout</a>
 							</li>
 						@endauth
 					</ul>

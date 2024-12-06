@@ -89,7 +89,7 @@ $played=[];
 <!-- End table -->
 
 <div style="width:75%; margin:100px auto;">
-	<h3 style="text-align:center;"># of Times Played</h3>
+	<h3 style="text-align:center;"># of Games Played</h3>
 	<canvas id="myChart"></canvas>
 </div>
 

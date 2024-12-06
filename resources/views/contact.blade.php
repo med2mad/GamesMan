@@ -2,13 +2,10 @@
 
 <x-title text="Contact Me"></x-title>
 
-<!-- Start Contact Form -->
 <div class="untree_co-section" style="margin-top: 2rem;">
   <div class="container">
-
     <div class="block">
       <div class="row justify-content-center">
-
         <div class="col-md-9 col-lg-9 pb-4">
 
           <div class="row mb-5">
@@ -149,12 +146,10 @@
           <div class="form-group mt-2 text-right">
             <p class="alert alert-info" style="display:none;" id="ok">Message send !</p>
         </div>
+
         </div>
-
       </div>
-
     </div>
-
   </div>
 
 

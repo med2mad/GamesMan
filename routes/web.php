@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\saveGame_controller;
-use Illuminate\Support\Str;
+use App\Http\Controllers\controllers;
+
 
 Route::get('/', function () {
     return view('index', ['page'=>'index']);
@@ -29,19 +28,19 @@ Route::get('/page/games', function (Request $request) {
     return view('games', ["games"=>$paginator, "page"=>'games', "title"=>$title, "sortby"=>$sortby, "order"=>$order]);
 });
 
-Route::get('/page/signup', function () {
-    return view('signup', ["route"=>'/signup', "page"=>'signup']);
+Route::get('/page/profile', function () {
+    return view('profile', ["route"=>'/profile', "page"=>'signup']);
 });
-
+Route::get('/page/editprofile', function () {
+    $user = Auth::user();
+    return view('profile', ["user"=>$user, "route"=>'/profile/'.$user->id, "page"=>'editprofile']);
+});
 
 Route::middleware([authorization::class])->group(function () {
     Route::get('/page/dashboard', function () {
         $games = Game::select('id', 'title', 'thumbnail', 'genre1', 'genre2', 'played', 'created_at')
                         ->where('userId', Auth::id())->orderBy('id', 'desc')->get();
         return view('dashboard', ["games"=>$games, 'page'=>'dashboard']);
-    });
-    Route::get('/page/editprofile', function () {
-        return view('signup', ["user"=>Auth::user(), "route"=>'/editprofile']);
     });
     Route::get('/page/add', function () {
         return view('add', ["route"=>'/add']);
@@ -61,8 +60,8 @@ Route::get('/page/{page}', function ($page) {
 });
 
 Route::middleware([authorization::class, validation::class, upload::class])->group(function () {
-    Route::post('/add', [saveGame_controller::class, 'save']);
-    Route::post('/edit/{gameId}', [saveGame_controller::class, 'save']);
+    Route::post('/add', [controllers::class, 'save']);
+    Route::post('/edit/{gameId}', [controllers::class, 'save']);
 });
 
 Route::get('/play/{gameId}', function ($gameId) {
@@ -70,34 +69,7 @@ Route::get('/play/{gameId}', function ($gameId) {
     return view('play', ['game'=>$game, 'page'=>'play']);
 });
 
-Route::post('/signup', function (Request $request) {
-    $request->validate([
-        'name' => 'required|unique:users|min:5|max:10',
-        'password' => 'required|min:5|max:10|confirmed',
-        'email' =>  'required|unique:users|email',
-    ]);
-    $fileName = 'none.jpg';
-    if($request->hasFile('photo') and $request->file('photo')->isValid()) {
-        $request->validate(['photo' => 'file|mimes:jpg,png,jpeg,gif,svg']);
-        $fileName = time().'_'.$request->file('photo')->getClientOriginalName();
-        $request->file('photo')->move(public_path('images/users'), $fileName);
-    }
-    User::create([
-        'name' => $request->input('name'),
-        'password' => Hash::make($request->input('password')),
-        'email' => $request->input('email'),
-        'photo' => $fileName,
-        'remember_token' => Str::random(10),
-    ]);
-
-    $form = '<form id="redirect-form" method="POST" action="/login">' . csrf_field() . '
-            <input type="hidden" name="name" value="'.$request->input('name').'">
-            <input type="hidden" name="password" value="'.$request->input('password').'">
-        </form>
-        <script>document.getElementById("redirect-form").submit();</script>';
-
-    return response($form);
-});
+Route::post('/profile/{userId?}', [controllers::class, 'profile']);
 
 Route::post('/login', function (Request $request) {
     $validated = $request->validate([
@@ -105,7 +77,7 @@ Route::post('/login', function (Request $request) {
         'password' => 'required|min:5|max:10',
     ]);
 
-    if(Auth::attempt( ["password"=>$validated['password'] , "name"=>$validated['name']] )){
+    if(Auth::attempt( $validated )){
         return redirect('/page/dashboard');
     }
     else{
