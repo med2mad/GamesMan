@@ -41,7 +41,6 @@ class controllers extends Controller
     
         $values['password'] = Hash::make($request->input('password'));
         
-        $values['photo'] = 'none.jpg';
         if($request->hasFile('photo') and $request->file('photo')->isValid()) {
             $request->validate(['photo' => 'file|mimes:jpg,png,jpeg,gif,svg']);
             $fileName = time().'_'.$request->file('photo')->getClientOriginalName();

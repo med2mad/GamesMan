@@ -38,10 +38,10 @@
 							if(!isset($page)){$page='';}	
 						@endphp
 
-						<li style="margin-right:0;" class="{{$page=='index'?'nav-item active':''}}">
+						<li class="{{$page=='index'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/index">Home</a>
 						</li>
-						<li style="margin-right:0;" class="{{$page=='games'?'nav-item active':''}}">
+						<li class="{{$page=='games'?'nav-item active':''}}">
 							<a class="nav-link" href="/page/games">Games</a>
 						</li>
 						@auth

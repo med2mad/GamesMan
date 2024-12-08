@@ -59,9 +59,9 @@ Route::get('/page/{page}', function ($page) {
     return view($page, ['page'=>$page]);
 });
 
-Route::middleware([authorization::class, validation::class, upload::class])->group(function () {
-    Route::post('/add', [controllers::class, 'save']);
-    Route::post('/edit/{gameId}', [controllers::class, 'save']);
+Route::middleware([authorization::class, validation::class, upload::class])->controller(controllers::class)->group(function(){
+    Route::post('/add', 'save');
+    Route::post('/edit/{gameId}', 'save');
 });
 
 Route::get('/play/{gameId}', function ($gameId) {
