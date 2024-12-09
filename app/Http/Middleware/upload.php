@@ -19,15 +19,14 @@ class upload
         else{$request->attributes->set('file', $request->input('filename'));}
 
         if($request->hasFile('thumbnail') and $request->file('thumbnail')->isValid()) {
-            $thumbnail = $request->file('thumbnail')->store('/images/thumbnails', 'public');
+            $thumbnail = $request->file('thumbnail')->store('images\thumbnails', 'public');
             $request->attributes->set('thumbnail',basename($thumbnail));
         }
         else{ $request->attributes->set('thumbnail', $request->input('thumbnailname')); }
 
         if($request->hasFile('screenshot') and $request->file('screenshot')->isValid()) {
-            $screenshot = time().'_'.$request->file('screenshot')->getClientOriginalName();
-            $request->file('screenshot')->store(public_path('/images/screenshots'), $screenshot);
-            $request->attributes->set('screenshot',$screenshot);
+            $screenshot = $request->file('screenshot')->store('images\screenshots', 'public');
+            $request->attributes->set('screenshot',basename($screenshot));
         }
         else{ $request->attributes->set('screenshot', $request->input('screenshotname')); }
 
