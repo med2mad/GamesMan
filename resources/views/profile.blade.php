@@ -52,16 +52,17 @@
               <label class="text-black" for="photo">Photo</label>
               <div style="display:flex; gap:10px; align-items:center;justify-content: center;">
                 <div>
-                  <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;" onclick="document.getElementById('photo').click();"><i style="font-size:1.2rem" class="fa fa-image"></i></a> <br>
-                  <a class="btn btn-secondary" style="width:90px; padding:5px; margin:2px; background-color:brown; color:white;" id="nophoto"><i style="font-size:1.2rem" class="fa fa-times"></i></a>
+                  <a onclick="document.getElementById('photo').click();" class="btn btn-secondary" style="width:90px; padding:5px; margin:2px;"><i style="font-size:1.2rem" class="fa fa-image"></i></a> <br>
+                  <a id="nophoto" class="btn btn-secondary" style="width:90px; padding:5px; margin:2px; background-color:brown; color:white;"><i style="font-size:1.2rem" class="fa fa-times"></i></a>
                 </div>
                 <div>
                   <input name="photo" type="file" class="form-control" id="photo" accept=".jpg,.jpeg,.png,.bmp,.gif" style="display:none;" />
-                  <label for="photo"><img id="imgphoto" width="80" height="80" src="/images/users/{{isset($user)?$user->photo:'none.jpg'}}" alt="userphoto"></label>
+                  <label for="photo"><img id="photoimg" width="80" height="80" src="/images/users/{{isset($user)?$user->photo:'none.jpg'}}" alt="userphoto"></label>
                 </div>
               </div>
             </div>
-
+            <input type="hidden" name="photoname" value="{{isset($game)?$game->photo:'none.jpg'}}" id="photoname">
+          
             <input type="submit" class="btn btn-primary-hover-outline mt-3" value="{{ isset($user) ? 'Update Profile' : 'SignUp' }}" />
           </form>
 
@@ -74,13 +75,18 @@
 <!-- End Contact Form -->
 
 <script type="text/javascript">
-    document.getElementById("photo").onchange=function() {
-        document.getElementById("imgphoto").setAttribute("src",URL.createObjectURL(document.getElementById("photo").files[0]));
+  document.getElementById("photo").onchange=function() {
+    const inputFile = event.target;
+    if (inputFile.files.length > 0) {
+      document.getElementById("photoimg").setAttribute("src",URL.createObjectURL(document.getElementById("photo").files[0]));
+      document.getElementById("photoname").value = inputFile.files[0].name;
     }
-    document.getElementById("nophoto").onclick=function() {
-        document.getElementById("photo").value= null;
-        document.getElementById("imgphoto").setAttribute("src","/images/screenshots/none.jpg");
-    }
+  }
+  document.getElementById("nophoto").onclick=function() {
+      document.getElementById("photo").value= null;
+      document.getElementById("photoimg").setAttribute("src","/images/users/none.jpg");
+      document.getElementById("photoname").value = 'none.jpg';
+  }
 </script>
 
 @include( 'partials.footer' )
