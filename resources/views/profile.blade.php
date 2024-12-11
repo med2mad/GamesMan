@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            <input type="hidden" name="photoname" value="{{isset($game)?$game->photo:'none.jpg'}}" id="photoname">
+            <input type="hidden" name="photoname" value="{{isset($user)?$user->photo:'none.jpg'}}" id="photoname">
           
             <input type="submit" class="btn btn-primary-hover-outline mt-3" value="{{ isset($user) ? 'Update Profile' : 'SignUp' }}" />
           </form>

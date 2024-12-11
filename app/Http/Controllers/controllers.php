@@ -37,16 +37,16 @@ class controllers extends Controller
             'name' =>  ['required','min:5','max:10',Rule::unique('users','name')->ignore($request->userId)],
             'email' =>  ['required', 'email', Rule::unique('users','email')->ignore($request->userId)],
             'password' => 'required|min:5|max:10|confirmed',
+            'photo' => 'file|mimes:jpg,png,jpeg,gif,svg',
         ]);
     
         $values['password'] = Hash::make($request->input('password'));
         
         if($request->hasFile('photo') and $request->file('photo')->isValid()) {
-            $request->validate(['photo' => 'file|mimes:jpg,png,jpeg,gif,svg']);
-            $fileName = time().'_'.$request->file('photo')->getClientOriginalName();
-            $request->file('photo')->move(public_path('images/users'), $fileName);
-            $values['photo'] = $fileName;
+            $photo = $request->file('photo')->store('images\users', 'public');
+            $values['photo'] = basename($photo);
         }
+        else{ $values['photo'] = basename($request->input('photoname')); }
     
         if ($request->userId) {
             $oldEmail = Auth::user()->email;
